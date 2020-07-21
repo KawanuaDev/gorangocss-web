@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Title }} - {{ .Param "description" }}</title>
-  <link rel="stylesheet" href="https://static.my.id/libs/gorangocss/latest/dist/gorango.min.css" crossorigin="anonymous">
+  {{ partial "headtag.html" . }}
 </head>
 <body>
-  <main>
+  <main role="main">
     <section>
       <div class="container">
         {{ block "main" . }}{{ end }}
