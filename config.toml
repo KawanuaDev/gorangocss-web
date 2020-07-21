@@ -1,0 +1,8 @@
+baseURL = ""
+languageCode = "en-us"
+title = "GorangoCSS"
+assetsDir = "assets"
+publishDir = "public"
+
+[params]
+description = "A CSS framework for building custom user interfaces."
