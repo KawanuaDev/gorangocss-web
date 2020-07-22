@@ -1,3 +1,4 @@
 *.sh
 *.lib
 public/*
+assets/styles/gorango.css

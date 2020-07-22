@@ -156,21 +156,93 @@
     <figure class="class pa--1 border--5 rounded--t--6">
       <kbd>.txt--{colorName}</kbd>
     </figure>
-    {{ $txtnavy := "<span class=\"txt--navy\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-    {{ $txtpink := "<span class=\"txt--pink\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-    {{ $txtmediumseagreen := "<span class=\"txt--mediumseagreen\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
+    {{ $txtnavy := "<span class=\"txt--navy\">Text with Navy color!</span>" }}
+    {{ $txtorchid := "<span class=\"txt--orchid\">Text with Orchid color!</span>" }}
+    {{ $txtaqua := "<span class=\"txt--aqua\">Text with Aqua color!</span>" }}
     <figure class="">
       <pre class="bg--whitesmoke pt--2 pb--1 px--1">
   {{ $txtnavy }}
-  {{ $txtpink }}
-  {{ $txtmediumseagreen }}
+  {{ $txtorchid }}
+  {{ $txtaqua }}
       </pre>
     </figure>
     <figure class="preview pa--2 border--5 rounded--b--6">
       {{ $txtnavy | safeHTML }}<br>
-      {{ $txtpink | safeHTML }}<br>
-      {{ $txtmediumseagreen | safeHTML }}<br>
+      {{ $txtorchid | safeHTML }}<br>
+      {{ $txtaqua | safeHTML }}<br>
     </figure>
+  </div>
+{{ end }}
+
+{{ define "bgcolor" }}
+  <div class="bgcolor pb--1">
+    <h4 class="pb--1">Background Color</h4>
+    <section id="bgcolor" class="pb--1">
+      <figure class="class pa--1 border--5 rounded--t--6">
+        <kbd>.bg--{colorName}</kbd>
+      </figure>
+      {{ $bgcolor1 := "<div class=\"bg--navy rounded--5 pa--2 txt--white\">.bg--navy</div>" }}
+      {{ $bgcolor2 := "<div class=\"bg--orchid rounded--5 pa--2\">.bg--orchid</div>" }}
+      {{ $bgcolor3 := "<div class=\"bg--aqua rounded--5 pa--2\">.bg--aqua</div>" }}
+      <figure class="">
+        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+  {{ $bgcolor1 }}
+  {{ $bgcolor2 }}
+  {{ $bgcolor3 }}
+        </pre>
+      </figure>
+      <figure class="preview pa--2 border--5 rounded--b--6">
+        {{ $bgcolor1 | safeHTML }}<br>
+        {{ $bgcolor2 | safeHTML }}<br>
+        {{ $bgcolor3 | safeHTML }}<br>
+      </figure>
+    </section>
+    <section id="bgdarklight" class="pb--1">
+      <figure class="class pa--1 border--5 rounded--t--6">
+        <kbd>.bg--{dark | light}</kbd>
+      </figure>
+      {{ $bgcolord := "<div class=\"bg--dark rounded--5 pa--2\">.bg--dark</div>" }}
+      {{ $bgcolorl := "<div class=\"bg--light rounded--5 pa--2\">.bg--light</div>" }}
+      <figure class="">
+        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+  {{ $bgcolord }}
+  {{ $bgcolorl }}
+        </pre>
+      </figure>
+      <figure class="preview pa--2 border--5 rounded--b--6">
+        {{ $bgcolord | safeHTML }}<br>
+        {{ $bgcolorl | safeHTML }}<br>
+      </figure>
+    </section>
+    <section id="bgblack" class="pb--1">
+      <figure class="class pa--1 border--5 rounded--t--6">
+        <kbd>.bg--black--{10 | 20 | 30 | 40 | 50}</kbd>
+      </figure>
+      {{ $bgblack0 := "<div class=\"bg--black rounded--5 pa--2 txt--white\">.bg--black</div>" }}
+      {{ $bgblack10 := "<div class=\"bg--black--10 rounded--5 pa--2 txt--white\">.bg--black--10</div>" }}
+      {{ $bgblack20 := "<div class=\"bg--black--20 rounded--5 pa--2 txt--white\">.bg--black--20</div>" }}
+      {{ $bgblack30 := "<div class=\"bg--black--30 rounded--5 pa--2 txt--white\">.bg--black--30</div>" }}
+      {{ $bgblack40 := "<div class=\"bg--black--40 rounded--5 pa--2 txt--white\">.bg--black--40</div>" }}
+      {{ $bgblack50 := "<div class=\"bg--black--50 rounded--5 pa--2 txt--white\">.bg--black--50</div>" }}
+      <figure class="">
+        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+  {{ $bgblack0 }}
+  {{ $bgblack10 }}
+  {{ $bgblack20 }}
+  {{ $bgblack30 }}
+  {{ $bgblack40 }}
+  {{ $bgblack50 }}
+        </pre>
+      </figure>
+      <figure class="preview pa--2 border--5 rounded--b--6">
+        {{ $bgblack0 | safeHTML }}<br>
+        {{ $bgblack10 | safeHTML }}<br>
+        {{ $bgblack20 | safeHTML }}<br>
+        {{ $bgblack30 | safeHTML }}<br>
+        {{ $bgblack40 | safeHTML }}<br>
+        {{ $bgblack50 | safeHTML }}<br>
+      </figure>
+    </section>
   </div>
 {{ end }}
 
@@ -180,17 +252,26 @@
     <figure class="class pa--1 border--5 rounded--t--6">
       <kbd>.badge</kbd>
     </figure>
-    {{ $badge1 := "Lorem ipsum dolor sit amet consectetur. <span class=\"badge bg--maroon txt--white\">adipisicing</span>" }}
-    {{ $badge2 := "Lorem ipsum dolor sit amet consectetur. <span class=\"badge bg--forestgreen txt--white\">adipisicing</span>" }}
+    {{ $badge1 := "<span class=\"badge bg--navy txt--white\">New</span> Badge with Navy color! " }}
+    {{ $badge2 := "<span class=\"badge bg--orchid txt--white\">New</span> Badge with Orchid color! " }}
+    {{ $badge3 := "<span class=\"badge bg--aqua\">New</span> Badge with Aqua color! " }}
+    {{ $badge4 := "<span class=\"badge bg--dark\">New</span> Badge with Dark properties! " }}
+    {{ $badge5 := "<span class=\"badge bg--light\">New</span> Badge with Light properties! " }}
     <figure>
       <pre class="bg--whitesmoke pt--2 pb--1 px--1">
   {{ $badge1 }}
   {{ $badge2 }}
+  {{ $badge3 }}
+  {{ $badge4 }}
+  {{ $badge5 }}
       </pre>
     </figure>
     <figure class="preview pa--2 border--5 rounded--b--6">
       {{ $badge1 | safeHTML }}<br>
       {{ $badge2 | safeHTML }}<br>
+      {{ $badge3 | safeHTML }}<br>
+      {{ $badge4 | safeHTML }}<br>
+      {{ $badge5 | safeHTML }}<br>
     </figure>
   </div>
 {{ end }}
@@ -210,7 +291,7 @@
     {{ $shadowinner := "<div class=\"shadow--inner bg--ghostwhite rounded--6 pa--2\">.shadow--inner</div>" }}
     {{ $shadow0 := "<div class=\"shadow--0 bg--ghostwhite rounded--6 pa--2\">.shadow--0</div>" }}
     <figure>
-      <pre class="bg--whitesmoke pt--2 pb--1 px--1 rounded--t--6">
+      <pre class="bg--whitesmoke pt--2 pb--1 px--1">
   {{ $shadowxs }}
   {{ $shadowsm }}
   {{ $shadow }}
@@ -291,9 +372,9 @@
       {{ $border10 := "<div class=\"border--10 bg--ghostwhite pa--2\">.border--10</div>" }}
       <figure>
         <pre class="bg--whitesmoke pt--2 pb--1 px--1">
-    {{ $border1 }}
-    {{ $border5 }}
-    {{ $border10 }}
+  {{ $border1 }}
+  {{ $border5 }}
+  {{ $border10 }}
         </pre>
       </figure>
       <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
@@ -312,10 +393,10 @@
       {{ $borderl := "<div class=\"border--l--5 bg--ghostwhite pa--2\">.border--l--5</div>" }}
       <figure>
         <pre class="bg--whitesmoke pt--2 pb--1 px--1">
-    {{ $bordert }}
-    {{ $borderr }}
-    {{ $borderb }}
-    {{ $borderl }}
+  {{ $bordert }}
+  {{ $borderr }}
+  {{ $borderb }}
+  {{ $borderl }}
         </pre>
       </figure>
       <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
@@ -340,9 +421,9 @@
       {{ $round10 := "<div class=\"rounded--10 bg--ghostwhite pa--2\">.rounded--10</div>" }}
       <figure>
         <pre class="bg--whitesmoke pt--2 pb--1 px--1">
-    {{ $round1 }}
-    {{ $round5 }}
-    {{ $round10 }}
+  {{ $round1 }}
+  {{ $round5 }}
+  {{ $round10 }}
         </pre>
       </figure>
       <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
@@ -361,10 +442,10 @@
       {{ $roundl := "<div class=\"rounded--l--10 bg--ghostwhite pa--2\">.rounded--l--10</div>" }}
       <figure>
         <pre class="bg--whitesmoke pt--2 pb--1 px--1">
-    {{ $roundt }}
-    {{ $roundr }}
-    {{ $roundb }}
-    {{ $roundl }}
+  {{ $roundt }}
+  {{ $roundr }}
+  {{ $roundb }}
+  {{ $roundl }}
         </pre>
       </figure>
       <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
