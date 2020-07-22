@@ -7,7 +7,21 @@
   <main role="main">
     <section>
       <div class="container">
-        {{ block "main" . }}{{ end }}
+        <h1 class="py--2">{{ .Title }} Docs</h1>
+        <h2 class="pb--2">{{ .Param "description" }}</h2>
+
+        <section id="components">
+          <h3 class="py--1">Components</h3>
+          {{ block "typography" . }}{{ end }}
+          {{ block "textcolor" . }}{{ end }}
+          {{ block "badge" . }}{{ end }}
+          {{ block "shadows" . }}{{ end }}
+          <!-- {{ block "margin" . }}{{ end }} -->
+          <!-- {{ block "padding" . }}{{ end }} -->
+          {{ block "border" . }}{{ end }}
+          {{ block "border-radius" . }}{{ end }}
+        </section>
+      
       </div>
     </section>
   </main>
