@@ -415,7 +415,7 @@
       <h4 class="pb--1">Badge</h4>
     </header>
     <figure class="class pa--1 border--5 rounded--t--6">
-      <kbd>.badge</kbd><br>
+      <kbd>.badge</kbd>
       <kbd>.badge--{info | success | warning | danger}</kbd>
     </figure>
     {{ $badge1 := "<span class=\"badge bg--navy txt--white\">New</span> Badge with Navy color! " }}
@@ -509,16 +509,16 @@
     <figure class="class pa--1 border--5 rounded--t--6">
       <kbd>.margin--{ auto | t | r | b | l | a }</kbd>
     </figure>
-    {{ $margint4 := "<div class=\"bg--khaki\">.mt--4<div class=\"mt--4 bg--whitesmoke\"><p class=\"mt--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div></div>" }}
-    {{ $margintop4 := "<div class=\"bg--khaki\">.margin--t--4<p class=\"margin--t--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
-    {{ $marginr4 := "<div class=\"bg--khaki\">.mr--4<p class=\"mr--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
-    {{ $marginright4 := "<div class=\"bg--khaki\">.margin--r--4<p class=\"margin--r--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
-    {{ $marginb4 := "<div class=\"bg--khaki\">.mb--4<p class=\"mb--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
-    {{ $marginbottom4 := "<div class=\"bg--khaki\">.margin--b--4<p class=\"margin--b--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
-    {{ $marginl4 := "<div class=\"bg--khaki\">.ml--4<p class=\"ml--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
-    {{ $marginleft4 := "<div class=\"bg--khaki\">.margin--l--4<p class=\"margin--l--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
-    {{ $margin4 := "<div class=\"bg--khaki\">.ma--4<p class=\"ma--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
-    {{ $marginall4 := "<div class=\"bg--khaki\">.margin--4<p class=\"margin--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
+    {{ $margint4 := "<p class=\"mt--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.mt--4</kbd> class.</p>" }}
+    {{ $margintop4 := "<p class=\"margin--t--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.margin--t--4</kbd> class.</p>" }}
+    {{ $marginr4 := "<p class=\"mr--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.mr--4</kbd> class.</p>" }}
+    {{ $marginright4 := "<p class=\"margin--r--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.margin--r--4</kbd> class.</p></p>" }}
+    {{ $marginb4 := "<p class=\"mb--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.mb--4</kbd> class.</p>" }}
+    {{ $marginbottom4 := "<p class=\"margin--b--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.margin--b--4</kbd> class.</p></p>" }}
+    {{ $marginl4 := "<p class=\"ml--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.ml--4</kbd> class.</p>" }}
+    {{ $marginleft4 := "<p class=\"margin--l--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.margin--l--4</kbd> class.</p></p>" }}
+    {{ $margin4 := "<p class=\"ma--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.ma--4</kbd> class.</p>" }}
+    {{ $marginall4 := "<p class=\"margin--4 bg--whitesmoke pa--1\">Paragraph section with <kbd>.margin--4</kbd> class.</p></p>" }}
     <figure>
 <pre class="bg--dark pa--2">
   {{ $margint4 }}
@@ -543,7 +543,7 @@
       {{ $marginl4 | safeHTML }}<br>
       {{ $marginleft4 | safeHTML }}<br>
       {{ $margin4 | safeHTML }}<br>
-      {{ $marginall4 | safeHTML }}<br>
+      {{ $marginall4 | safeHTML }}
     </figure>
   </article>
 {{ end }}
