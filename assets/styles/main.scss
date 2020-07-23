@@ -26,16 +26,18 @@ kbd {
 
 .class, .code, .preview {
   &::before {
+    background-color: whitesmoke;
     color: darkgray;
     font: {
       size: .6rem;
       weight: bold;
     }
-    float: right;
+    left: -2rem;
+    letter-spacing: .1rem;
+    padding: .8rem 1rem;
     position: relative;
     text-transform: uppercase;
-    right: -1rem;
-    top: -1rem;
+    top: -2.8rem;
   }
 }
 .class, .preview {
@@ -52,8 +54,9 @@ kbd {
 //     content: "code";
 //   }
 // }
-.preview {
-  &::before {
-    content: "preview";
-  }
-}
+// .preview {
+//   &::before {
+//     content: "preview";
+//   }
+// }
+

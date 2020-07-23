@@ -2,29 +2,37 @@
 <html lang="en">
 <head>
   {{ partial "headtag.html" . }}
+  {{ partial "scripts.html" . }}
 </head>
 <body>
-  <main role="main">
-    <section>
-      <div class="container">
-        <h1 class="py--2">{{ .Title }} Docs</h1>
-        <h2 class="pb--2">{{ .Param "description" }}</h2>
+  <header>
+    <div class="container">
+      <h1 class="py--2">{{ .Title }} Docs</h1>
+      <h2 class="pb--2">{{ .Param "description" }} <span class="highlight--info">No JS required!</span></h2>
+    </div>
+  </header>
+  <main>
+    <div class="container">
 
-        <section id="components">
-          <h3 class="py--1">Components</h3>
-          {{ block "typography" . }}{{ end }}
-          {{ block "textcolor" . }}{{ end }}
-          {{ block "bgcolor" . }}{{ end }}
-          {{ block "badge" . }}{{ end }}
-          {{ block "shadows" . }}{{ end }}
-          <!-- {{ block "margin" . }}{{ end }} -->
-          <!-- {{ block "padding" . }}{{ end }} -->
-          {{ block "border" . }}{{ end }}
-          {{ block "border-radius" . }}{{ end }}
-        </section>
+      <section id="components">
+        <h3 class="py--1">Components</h3>
+        {{ block "badge" . }}{{ end }}
+        {{ block "highlight" . }}{{ end }}
+        {{ block "float" . }}{{ end }}
+      </section>
       
-      </div>
-    </section>
+      <section id="utilities">
+        <h3 class="py--1">Utilities</h3>
+        <!-- {{ block "margin" . }}{{ end }} -->
+        {{ block "padding" . }}{{ end }}
+        {{ block "bgcolor" . }}{{ end }}
+        {{ block "border" . }}{{ end }}
+        {{ block "typography" . }}{{ end }}
+        {{ block "shadows" . }}{{ end }}
+      </section>
+    
+    </div>
   </main>
+  {{ partial "scripts.html" . }}
 </body>
 </html>

@@ -1,7 +1,68 @@
 {{ define "typography" }}
-  <div class="typography">
-    <div class="fontweight">
-      <h4 class="pb--1">Font Weight</h4>
+  <article id="typography">
+    <header>
+      <h4>Typography</h4>
+    </header>
+    <section id="textcolor" class="pb--1">
+      <header>
+        <span class="badge bg--light float--right">since 1.7.0</span>
+        <h5 class="pb--1">Headers</h5>
+      </header>
+      <figure class="class pa--1 border--5 rounded--t--6">
+        <kbd>h1 - h6</kbd>
+        <kbd>.h{1 | 2 | 3 | 4 | 5 | 6}</kbd>
+      </figure>
+      {{ $h1 := "<h1>Header 1</h1>" }}
+      {{ $h2 := "<h2>Header 2</h2>" }}
+      {{ $h3 := "<h3>Header 3</h3>" }}
+      {{ $h4 := "<h4>Header 4</h4>" }}
+      {{ $h5 := "<h5>Header 5</h5>" }}
+      {{ $h6 := "<h6>Header 6</h6>" }}
+      {{ $p1 := "<p class=\"h1\">Header 1</p>" }}
+      {{ $p2 := "<p class=\"h2\">Header 2</p>" }}
+      {{ $p3 := "<p class=\"h3\">Header 3</p>" }}
+      {{ $p4 := "<p class=\"h4\">Header 4</p>" }}
+      {{ $p5 := "<p class=\"h5\">Header 5</p>" }}
+      {{ $p6 := "<p class=\"h6\">Header 6</p>" }}
+      <figure class="">
+<pre class="bg--dark pa--2">
+  {{ $h1 }}
+  {{ $h2 }}
+  {{ $h3 }}
+  {{ $h4 }}
+  {{ $h5 }}
+  {{ $h6 }}
+
+  {{ $p1 }}
+  {{ $p2 }}
+  {{ $p3 }}
+  {{ $p4 }}
+  {{ $p5 }}
+  {{ $p6 }}
+</pre>
+      </figure>
+      <figure class="preview pa--2 border--5 rounded--b--6">
+        {{ $h1 | safeHTML }}
+        {{ $h2 | safeHTML }}
+        {{ $h3 | safeHTML }}
+        {{ $h4 | safeHTML }}
+        {{ $h5 | safeHTML }}
+        {{ $h6 | safeHTML }}
+        <br>
+        {{ $p1 | safeHTML }}
+        {{ $p2 | safeHTML }}
+        {{ $p3 | safeHTML }}
+        {{ $p4 | safeHTML }}
+        {{ $p5 | safeHTML }}
+        {{ $p6 | safeHTML }}
+      </figure>
+    </section>
+
+    <section id="fontweight" class="pb--1">
+      <header>
+        <span class="badge bg--light float--right">since 1.4.0</span>
+        <h5 class="pb--1">Font Weight</h5>
+      </header>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
           <kbd>.hairline</kbd> <kbd>.font--hairline</kbd> <kbd>.font--100</kbd>
@@ -9,11 +70,11 @@
         {{ $hairline := "<span class=\"hairline\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fonthairline := "<span class=\"font--hairline\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f100 := "<span class=\"font--100\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="code bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $hairline }}
   {{ $fonthairline }}
   {{ $f100 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f100 | safeHTML }}
         </figure>
@@ -25,11 +86,11 @@
         {{ $xlight := "<span class=\"xlight\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontxlight := "<span class=\"font--xlight\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f200 := "<span class=\"font--200\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $xlight }}
   {{ $fontxlight }}
   {{ $f200 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f200 | safeHTML }}
         </figure>
@@ -41,11 +102,11 @@
         {{ $light := "<span class=\"light\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontlight := "<span class=\"font--light\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f300 := "<span class=\"font--300\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $light }}
   {{ $fontlight }}
   {{ $f300 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f300 | safeHTML }}
         </figure>
@@ -57,11 +118,11 @@
         {{ $regular := "<span class=\"regular\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontregular := "<span class=\"font--regular\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f400 := "<span class=\"font--400\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $regular }}
   {{ $fontregular }}
   {{ $f400 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f400 | safeHTML }}
         </figure>
@@ -73,11 +134,11 @@
         {{ $medium := "<span class=\"medium\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontmedium := "<span class=\"font--medium\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f500 := "<span class=\"font--500\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $medium }}
   {{ $fontmedium }}
   {{ $f500 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f500 | safeHTML }}
         </figure>
@@ -89,11 +150,11 @@
         {{ $semibold := "<span class=\"semibold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontsemibold := "<span class=\"font--semibold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f600 := "<span class=\"font--600\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $semibold }}
   {{ $fontsemibold }}
   {{ $f600 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f600 | safeHTML }}
         </figure>
@@ -105,11 +166,11 @@
         {{ $bold := "<span class=\"bold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontbold := "<span class=\"font--bold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f700 := "<span class=\"font--700\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $bold }}
   {{ $fontbold }}
   {{ $f700 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f700 | safeHTML }}
         </figure>
@@ -121,11 +182,11 @@
         {{ $xbold := "<span class=\"xbold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontxbold := "<span class=\"font--xbold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f800 := "<span class=\"font--800\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--whitesmoke pa--2">
   {{ $xbold }}
   {{ $fontxbold }}
   {{ $f800 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f800 | safeHTML }}
         </figure>
@@ -137,47 +198,125 @@
         {{ $heavy := "<span class=\"heavy\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontheavy := "<span class=\"font--heavy\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f900 := "<span class=\"font--900\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $heavy }}
   {{ $fontheavy }}
   {{ $f900 }}
-        </pre>
+</pre>
         <figure class="preview pa--2 border--5 rounded--b--6">
           {{ $f900 | safeHTML }}
         </figure>
       </div>
-    </div>
-  </div>
-{{ end }}
+    </section>
 
-{{ define "textcolor" }}
-  <div class="textcolor pb--1">
-    <h4 class="pb--1">Text Color</h4>
-    <figure class="class pa--1 border--5 rounded--t--6">
-      <kbd>.txt--{colorName}</kbd>
-    </figure>
-    {{ $txtnavy := "<span class=\"txt--navy\">Text with Navy color!</span>" }}
-    {{ $txtorchid := "<span class=\"txt--orchid\">Text with Orchid color!</span>" }}
-    {{ $txtaqua := "<span class=\"txt--aqua\">Text with Aqua color!</span>" }}
-    <figure class="">
-      <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+    <section id="textcolor" class="pb--1">
+      <header>
+        <span class="badge bg--light float--right">since 1.5.0</span>
+        <h5 class="pb--1">Text Color</h5>
+      </header>
+      <figure class="class pa--1 border--5 rounded--t--6">
+        <kbd>.txt--{colorName}</kbd>
+      </figure>
+      {{ $txtnavy := "<p class=\"txt--navy\">Text with Navy color!</p>" }}
+      {{ $txtorchid := "<p class=\"txt--orchid\">Text with Orchid color!</p>" }}
+      {{ $txtaqua := "<p class=\"txt--aqua\">Text with Aqua color!</p>" }}
+      <figure class="">
+<pre class="bg--dark pa--2">
   {{ $txtnavy }}
   {{ $txtorchid }}
   {{ $txtaqua }}
-      </pre>
-    </figure>
-    <figure class="preview pa--2 border--5 rounded--b--6">
-      {{ $txtnavy | safeHTML }}<br>
-      {{ $txtorchid | safeHTML }}<br>
-      {{ $txtaqua | safeHTML }}<br>
-    </figure>
-  </div>
+</pre>
+      </figure>
+      <figure class="preview pa--2 border--5 rounded--b--6">
+        {{ $txtnavy | safeHTML }}
+        {{ $txtorchid | safeHTML }}
+        {{ $txtaqua | safeHTML }}
+      </figure>
+    </section>
+
+    <section id="textalign" class="pb--1">
+      <header>
+        <span class="badge bg--light float--right">since 1.7.0</span>
+        <h5 class="pb--1">Text Align</h5>
+      </header>
+      <figure class="class pa--1 border--5 rounded--t--6">
+        <kbd>.txt--{left | center | right}</kbd>
+        <kbd>.{left | center | right}</kbd>
+      </figure>
+      {{ $txtl := "<p class=\"left\">Text with Left alignment!</p>" }}
+      {{ $txtc := "<p class=\"center\">Text with Center alignment!</p>" }}
+      {{ $txtr := "<p class=\"right\">Text with Right alignment!</p>" }}
+      {{ $txtle := "<p class=\"txt--left\">Text with Left alignment!</p>" }}
+      {{ $txtce := "<p class=\"txt--center\">Text with Center alignment!</p>" }}
+      {{ $txtri := "<p class=\"txt--right\">Text with Right alignment!</p>" }}
+      <figure class="">
+<pre class="bg--dark pa--2">
+  {{ $txtl }}
+  {{ $txtc }}
+  {{ $txtr }}
+
+  {{ $txtle }}
+  {{ $txtce }}
+  {{ $txtri }}
+</pre>
+      </figure>
+      <figure class="preview pa--2 border--5 rounded--b--6">
+        {{ $txtl | safeHTML }}
+        {{ $txtc | safeHTML }}
+        {{ $txtr | safeHTML }}
+        <br>
+        {{ $txtle | safeHTML }}
+        {{ $txtce | safeHTML }}
+        {{ $txtri | safeHTML }}
+      </figure>
+    </section>
+
+    <section id="texttransform" class="pb--1">
+      <header>
+        <span class="badge bg--light float--right">since 1.7.0</span>
+        <h5 class="pb--1">Text Transform</h5>
+      </header>
+      <figure class="class pa--1 border--5 rounded--t--6">
+        <kbd>.txt--{upper | lower | capital}</kbd>
+        <kbd>.{upper | lower | capital}</kbd>
+      </figure>
+      {{ $txtu := "<p class=\"upper\">Transformed to uppercase.</p>" }}
+      {{ $txtl := "<p class=\"lower\">Transformed to lowercase.</p>" }}
+      {{ $txtc := "<p class=\"capital\">Transform first letter in each words to uppercase.</p>" }}
+      {{ $txtup := "<p class=\"txt--upper\">Transformed to uppercase.</p>" }}
+      {{ $txtlow := "<p class=\"txt--lower\">Transformed to lowercase.</p>" }}
+      {{ $txtcap := "<p class=\"txt--capital\">Transform first letter in each words to uppercase.</p>" }}
+      <figure class="">
+<pre class="bg--dark pa--2">
+  {{ $txtu }}
+  {{ $txtl }}
+  {{ $txtc }}
+
+  {{ $txtup }}
+  {{ $txtlow }}
+  {{ $txtcap }}
+</pre>
+      </figure>
+      <figure class="preview pa--2 border--5 rounded--b--6">
+        {{ $txtu | safeHTML }}
+        {{ $txtl | safeHTML }}
+        {{ $txtc | safeHTML }}
+        <br>
+        {{ $txtup | safeHTML }}
+        {{ $txtlow | safeHTML }}
+        {{ $txtcap | safeHTML }}
+      </figure>
+    </section>
+  </article>
 {{ end }}
 
 {{ define "bgcolor" }}
-  <div class="bgcolor pb--1">
-    <h4 class="pb--1">Background Color</h4>
-    <section id="bgcolor" class="pb--1">
+  <article id="background" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.5.0</span>
+      <h4 class="pb--1">Background Color</h4>
+    </header>
+    <div id="bgcolor" class="pb--1">
       <figure class="class pa--1 border--5 rounded--t--6">
         <kbd>.bg--{colorName}</kbd>
       </figure>
@@ -185,36 +324,59 @@
       {{ $bgcolor2 := "<div class=\"bg--orchid rounded--5 pa--2\">.bg--orchid</div>" }}
       {{ $bgcolor3 := "<div class=\"bg--aqua rounded--5 pa--2\">.bg--aqua</div>" }}
       <figure class="">
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $bgcolor1 }}
   {{ $bgcolor2 }}
   {{ $bgcolor3 }}
-        </pre>
+</pre>
       </figure>
       <figure class="preview pa--2 border--5 rounded--b--6">
         {{ $bgcolor1 | safeHTML }}<br>
         {{ $bgcolor2 | safeHTML }}<br>
         {{ $bgcolor3 | safeHTML }}<br>
       </figure>
-    </section>
-    <section id="bgdarklight" class="pb--1">
+    </div>
+    <div id="bgdarklight" class="pb--1">
       <figure class="class pa--1 border--5 rounded--t--6">
         <kbd>.bg--{dark | light}</kbd>
       </figure>
       {{ $bgcolord := "<div class=\"bg--dark rounded--5 pa--2\">.bg--dark</div>" }}
       {{ $bgcolorl := "<div class=\"bg--light rounded--5 pa--2\">.bg--light</div>" }}
       <figure class="">
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $bgcolord }}
   {{ $bgcolorl }}
-        </pre>
+</pre>
       </figure>
       <figure class="preview pa--2 border--5 rounded--b--6">
         {{ $bgcolord | safeHTML }}<br>
         {{ $bgcolorl | safeHTML }}<br>
       </figure>
-    </section>
-    <section id="bgblack" class="pb--1">
+    </div>
+    <div id="bgothers" class="pb--1">
+      <figure class="class pa--1 border--5 rounded--t--6">
+        <kbd>.bg--{info | success | warning | danger}</kbd>
+      </figure>
+      {{ $bginfo := "<div class=\"bg--info rounded--5 pa--2\">.bg--info</div>" }}
+      {{ $bgsuccess := "<div class=\"bg--success rounded--5 pa--2\">.bg--success</div>" }}
+      {{ $bgwarning := "<div class=\"bg--warning rounded--5 pa--2\">.bg--warning</div>" }}
+      {{ $bgdanger := "<div class=\"bg--danger rounded--5 pa--2\">.bg--danger</div>" }}
+      <figure class="">
+<pre class="bg--dark pa--2">
+  {{ $bginfo }}
+  {{ $bgsuccess }}
+  {{ $bgwarning }}
+  {{ $bgdanger }}
+</pre>
+      </figure>
+      <figure class="preview pa--2 border--5 rounded--b--6">
+        {{ $bginfo | safeHTML }}<br>
+        {{ $bgsuccess | safeHTML }}<br>
+        {{ $bgwarning | safeHTML }}<br>
+        {{ $bgdanger | safeHTML }}<br>
+      </figure>
+    </div>
+    <div id="bgblack" class="pb--1">
       <figure class="class pa--1 border--5 rounded--t--6">
         <kbd>.bg--black--{10 | 20 | 30 | 40 | 50}</kbd>
       </figure>
@@ -225,14 +387,14 @@
       {{ $bgblack40 := "<div class=\"bg--black--40 rounded--5 pa--2 txt--white\">.bg--black--40</div>" }}
       {{ $bgblack50 := "<div class=\"bg--black--50 rounded--5 pa--2 txt--white\">.bg--black--50</div>" }}
       <figure class="">
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $bgblack0 }}
   {{ $bgblack10 }}
   {{ $bgblack20 }}
   {{ $bgblack30 }}
   {{ $bgblack40 }}
   {{ $bgblack50 }}
-        </pre>
+</pre>
       </figure>
       <figure class="preview pa--2 border--5 rounded--b--6">
         {{ $bgblack0 | safeHTML }}<br>
@@ -242,43 +404,66 @@
         {{ $bgblack40 | safeHTML }}<br>
         {{ $bgblack50 | safeHTML }}<br>
       </figure>
-    </section>
-  </div>
+    </div>
+  </article>
 {{ end }}
 
 {{ define "badge" }}
-  <div class="badges pb--1">
-    <h4 class="pb--1">Badge</h4>
+  <article id="badges" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.6.0</span>
+      <h4 class="pb--1">Badge</h4>
+    </header>
     <figure class="class pa--1 border--5 rounded--t--6">
-      <kbd>.badge</kbd>
+      <kbd>.badge</kbd><br>
+      <kbd>.badge--{info | success | warning | danger}</kbd>
     </figure>
     {{ $badge1 := "<span class=\"badge bg--navy txt--white\">New</span> Badge with Navy color! " }}
     {{ $badge2 := "<span class=\"badge bg--orchid txt--white\">New</span> Badge with Orchid color! " }}
     {{ $badge3 := "<span class=\"badge bg--aqua\">New</span> Badge with Aqua color! " }}
     {{ $badge4 := "<span class=\"badge bg--dark\">New</span> Badge with Dark properties! " }}
     {{ $badge5 := "<span class=\"badge bg--light\">New</span> Badge with Light properties! " }}
+    {{ $badge6 := "<span class=\"badge--info\">New</span> Badge with Info properties! " }}
+    {{ $badge7 := "<span class=\"badge--success\">New</span> Badge with Success properties! " }}
+    {{ $badge8 := "<span class=\"badge--warning\">New</span> Badge with Warning properties! " }}
+    {{ $badge9 := "<span class=\"badge--danger\">New</span> Badge with Danger properties! " }}
     <figure>
-      <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $badge1 }}
   {{ $badge2 }}
   {{ $badge3 }}
+
   {{ $badge4 }}
   {{ $badge5 }}
-      </pre>
+
+  {{ $badge6 }}
+  {{ $badge7 }}
+  {{ $badge8 }}
+  {{ $badge9 }}
+</pre>
     </figure>
     <figure class="preview pa--2 border--5 rounded--b--6">
       {{ $badge1 | safeHTML }}<br>
       {{ $badge2 | safeHTML }}<br>
       {{ $badge3 | safeHTML }}<br>
+      <br>
       {{ $badge4 | safeHTML }}<br>
       {{ $badge5 | safeHTML }}<br>
+      <br>
+      {{ $badge6 | safeHTML }}<br>
+      {{ $badge7 | safeHTML }}<br>
+      {{ $badge8 | safeHTML }}<br>
+      {{ $badge9 | safeHTML }}<br>
     </figure>
-  </div>
+  </article>
 {{ end }}
 
 {{ define "shadows" }}
-  <div class="shadows pb--1">
-    <h4 class="pb--1">Shadow</h4>
+  <article id="shadows" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.7.0</span>
+      <h4 class="pb--1">Shadow</h4>
+    </header>
     <figure class="class pa--1 border--5 rounded--t--6">
       <kbd>.shadow--{xs | sm | md | lg | xl | inner | 0 }</kbd>
     </figure>
@@ -291,7 +476,7 @@
     {{ $shadowinner := "<div class=\"shadow--inner bg--ghostwhite rounded--6 pa--2\">.shadow--inner</div>" }}
     {{ $shadow0 := "<div class=\"shadow--0 bg--ghostwhite rounded--6 pa--2\">.shadow--0</div>" }}
     <figure>
-      <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+<pre class="bg--dark pa--2">
   {{ $shadowxs }}
   {{ $shadowsm }}
   {{ $shadow }}
@@ -300,7 +485,7 @@
   {{ $shadowxl }}
   {{ $shadowinner }}
   {{ $shadow0 }}
-      </pre>
+</pre>
     </figure>
     <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
       {{ $shadowxs | safeHTML }}<br>
@@ -312,12 +497,15 @@
       {{ $shadowinner | safeHTML }}<br>
       {{ $shadow0 | safeHTML }}<br>
     </figure>
-  </div>
+  </article>
 {{ end }}
 
 {{ define "margin" }}
-  <div class="margin pb--1">
-    <h4 class="pb--1">Margin</h4>
+  <article id="margin" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.0.0</span>
+      <h4 class="pb--1">Margin</h4>
+    </header>
     <figure class="class pa--1 border--5 rounded--t--6">
       <kbd>.margin--{ auto | t | r | b | l | a }</kbd>
     </figure>
@@ -332,7 +520,7 @@
     {{ $margin4 := "<div class=\"bg--khaki\">.ma--4<p class=\"ma--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
     {{ $marginall4 := "<div class=\"bg--khaki\">.margin--4<p class=\"margin--4 bg--whitesmoke pa--1\">Lorem ipsum</p></div>" }}
     <figure>
-      <pre class="bg--whitesmoke pt--2 pb--1 px--1 rounded--t--6">
+<pre class="bg--dark pa--2">
   {{ $margint4 }}
   {{ $margintop4 }}
   {{ $marginr4 }}
@@ -343,7 +531,7 @@
   {{ $marginleft4 }}
   {{ $margin4 }}
   {{ $marginall4 }}
-      </pre>
+</pre>
     </figure>
     <figure class="preview pa--2 border--5 rounded--b--6">
       {{ $margint4 | safeHTML }}<br>
@@ -357,105 +545,205 @@
       {{ $margin4 | safeHTML }}<br>
       {{ $marginall4 | safeHTML }}<br>
     </figure>
-  </div>
+  </article>
+{{ end }}
+
+{{ define "padding" }}
+  <article id="padding" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.0.0</span>
+      <h4 class="pb--1">Padding</h4>
+    </header>
+    <figure class="class pa--1 border--5 rounded--t--6">
+      <kbd>.padding--{ t | r | b | l | a }--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
+    </figure>
+    {{ $paddingt4 := "<div class=\"pt--4 bg--plum\"><p class=\"bg--whitesmoke\"><kbd>.pt--4</kbd> <kbd>.padding--t--4</kbd></p></div>" }}
+    {{ $paddingr4 := "<div class=\"pr--4 bg--plum\"><p class=\"bg--whitesmoke\"><kbd>.pr--4</kbd> <kbd>.padding--r--4</kbd></p></div>" }}
+    {{ $paddingb4 := "<div class=\"pb--4 bg--plum\"><p class=\"bg--whitesmoke\"><kbd>.pb--4</kbd> <kbd>.padding--b--4</kbd></p></div>" }}
+    {{ $paddingl4 := "<div class=\"pl--4 bg--plum\"><p class=\"bg--whitesmoke\"><kbd>.pl--4</kbd> <kbd>.padding--l--4</kbd></p></div>" }}
+    {{ $padding4 := "<div class=\"pa--4 bg--plum\"><p class=\"bg--whitesmoke\"><kbd>.pa--4</kbd> <kbd>.padding--4</kbd></p></div>" }}
+    <figure>
+<pre class="bg--dark pa--2">
+  {{ $paddingt4 }}
+  {{ $paddingr4 }}
+  {{ $paddingb4 }}
+  {{ $paddingl4 }}
+  {{ $padding4 }}
+</pre>
+    </figure>
+    <figure class="preview pa--2 border--5 rounded--b--6">
+      {{ $paddingt4 | safeHTML }}<br>
+      {{ $paddingr4 | safeHTML }}<br>
+      {{ $paddingb4 | safeHTML }}<br>
+      {{ $paddingl4 | safeHTML }}<br>
+      {{ $padding4 | safeHTML }}<br>
+    </figure>
+  </article>
 {{ end }}
 
 {{ define "border" }}
-  <div class="border pb--1">
-    <h4 class="pb--1">Border</h4>
-    <section id="borderall" class="pb--1">
-      <figure class="class pa--1 border--5 rounded--t--6">
-        <kbd>.border--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
-      </figure>
-      {{ $border1 := "<div class=\"border--1 bg--ghostwhite pa--2\">.border--1</div>" }}
-      {{ $border5 := "<div class=\"border--5 bg--ghostwhite pa--2\">.border--5</div>" }}
-      {{ $border10 := "<div class=\"border--10 bg--ghostwhite pa--2\">.border--10</div>" }}
-      <figure>
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+  <article id="border" class="pb--1">
+    <header>
+      <h4 class="pb--1">Border</h4>
+    </header>
+    <section class="pb--1">
+      <header>
+        <span class="badge bg--light float--right">since 1.5.0</span>
+        <h5>Border Properties</h5>
+      </header>
+      <div class="pb--1">
+        <figure class="class pa--1 border--5 rounded--t--6">
+          <kbd>.border--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
+        </figure>
+        {{ $border1 := "<div class=\"border--1 bg--ghostwhite pa--2\">.border--1</div>" }}
+        {{ $border5 := "<div class=\"border--5 bg--ghostwhite pa--2\">.border--5</div>" }}
+        {{ $border10 := "<div class=\"border--10 bg--ghostwhite pa--2\">.border--10</div>" }}
+        <figure>
+<pre class="bg--dark pa--2">
   {{ $border1 }}
   {{ $border5 }}
   {{ $border10 }}
-        </pre>
-      </figure>
-      <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
-        {{ $border1 | safeHTML }}<br>
-        {{ $border5 | safeHTML }}<br>
-        {{ $border10 | safeHTML }}<br>
-      </figure>
-    </section>
-    <section id="bordertop" class="pb--1">
-      <figure class="class pa--1 border--5 rounded--t--6">
-        <kbd>.border--{t | r | b | l}--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
-      </figure>
-      {{ $bordert := "<div class=\"border--t--5 bg--ghostwhite pa--2\">.border--t--5</div>" }}
-      {{ $borderr := "<div class=\"border--r--5 bg--ghostwhite pa--2\">.border--r--5</div>" }}
-      {{ $borderb := "<div class=\"border--b--5 bg--ghostwhite pa--2\">.border--b--5</div>" }}
-      {{ $borderl := "<div class=\"border--l--5 bg--ghostwhite pa--2\">.border--l--5</div>" }}
-      <figure>
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+</pre>
+        </figure>
+        <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+          {{ $border1 | safeHTML }}<br>
+          {{ $border5 | safeHTML }}<br>
+          {{ $border10 | safeHTML }}<br>
+        </figure>
+      </div>
+      <div class="pb--1">
+        <figure class="class pa--1 border--5 rounded--t--6">
+          <kbd>.border--{t | r | b | l}--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
+        </figure>
+        {{ $bordert := "<div class=\"border--t--5 bg--ghostwhite pa--2\">.border--t--5</div>" }}
+        {{ $borderr := "<div class=\"border--r--5 bg--ghostwhite pa--2\">.border--r--5</div>" }}
+        {{ $borderb := "<div class=\"border--b--5 bg--ghostwhite pa--2\">.border--b--5</div>" }}
+        {{ $borderl := "<div class=\"border--l--5 bg--ghostwhite pa--2\">.border--l--5</div>" }}
+        <figure>
+<pre class="bg--dark pa--2">
   {{ $bordert }}
   {{ $borderr }}
   {{ $borderb }}
   {{ $borderl }}
-        </pre>
-      </figure>
-      <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
-        {{ $bordert | safeHTML }}<br>
-        {{ $borderr | safeHTML }}<br>
-        {{ $borderb | safeHTML }}<br>
-        {{ $borderl | safeHTML }}<br>
-      </figure>
+</pre>
+        </figure>
+        <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+          {{ $bordert | safeHTML }}<br>
+          {{ $borderr | safeHTML }}<br>
+          {{ $borderb | safeHTML }}<br>
+          {{ $borderl | safeHTML }}<br>
+        </figure>
+      </div>
     </section>
-  </div>
-{{ end }}
 
-{{ define "border-radius" }}
-  <div class="border-radius pb--1">
-    <h4 class="pb--1">Border Radius</h4>
-    <section id="roundall" class="pb--1">
-      <figure class="class pa--1 border--5 rounded--t--6">
-        <kbd>.rounded--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
-      </figure>
-      {{ $round1 := "<div class=\"rounded--1 bg--ghostwhite pa--2\">.rounded--1</div>" }}
-      {{ $round5 := "<div class=\"rounded--5 bg--ghostwhite pa--2\">.rounded--5</div>" }}
-      {{ $round10 := "<div class=\"rounded--10 bg--ghostwhite pa--2\">.rounded--10</div>" }}
-      <figure>
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+    <section id="border-radius" class="pb--1">
+      <header>
+        <span class="badge bg--light float--right">since 1.7.0</span>
+        <h4 class="pb--1">Rounded Border Properties</h4>
+      </header>
+      <div id="roundall" class="pb--1">
+        <figure class="class pa--1 border--5 rounded--t--6">
+          <kbd>.rounded--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
+        </figure>
+        {{ $round1 := "<div class=\"rounded--1 bg--ghostwhite pa--2\">.rounded--1</div>" }}
+        {{ $round5 := "<div class=\"rounded--5 bg--ghostwhite pa--2\">.rounded--5</div>" }}
+        {{ $round10 := "<div class=\"rounded--10 bg--ghostwhite pa--2\">.rounded--10</div>" }}
+        <figure>
+<pre class="bg--dark pa--2">
   {{ $round1 }}
   {{ $round5 }}
   {{ $round10 }}
-        </pre>
-      </figure>
-      <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
-        {{ $round1 | safeHTML }}<br>
-        {{ $round5 | safeHTML }}<br>
-        {{ $round10 | safeHTML }}<br>
-      </figure>
-    </section>
-    <section id="roundtop" class="pb--1">
-      <figure class="class pa--1 border--5 rounded--t--6">
-        <kbd>.rounded--{t | r | b | l}--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
-      </figure>
-      {{ $roundt := "<div class=\"rounded--t--10 bg--ghostwhite pa--2\">.rounded--t--10</div>" }}
-      {{ $roundr := "<div class=\"rounded--r--10 bg--ghostwhite pa--2\">.rounded--r--10</div>" }}
-      {{ $roundb := "<div class=\"rounded--b--10 bg--ghostwhite pa--2\">.rounded--b--10</div>" }}
-      {{ $roundl := "<div class=\"rounded--l--10 bg--ghostwhite pa--2\">.rounded--l--10</div>" }}
-      <figure>
-        <pre class="bg--whitesmoke pt--2 pb--1 px--1">
+</pre>
+        </figure>
+        <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+          {{ $round1 | safeHTML }}<br>
+          {{ $round5 | safeHTML }}<br>
+          {{ $round10 | safeHTML }}<br>
+        </figure>
+      </div>
+      <div id="roundtop" class="pb--1">
+        <figure class="class pa--1 border--5 rounded--t--6">
+          <kbd>.rounded--{t | r | b | l}--{1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}</kbd>
+        </figure>
+        {{ $roundt := "<div class=\"rounded--t--10 bg--ghostwhite pa--2\">.rounded--t--10</div>" }}
+        {{ $roundr := "<div class=\"rounded--r--10 bg--ghostwhite pa--2\">.rounded--r--10</div>" }}
+        {{ $roundb := "<div class=\"rounded--b--10 bg--ghostwhite pa--2\">.rounded--b--10</div>" }}
+        {{ $roundl := "<div class=\"rounded--l--10 bg--ghostwhite pa--2\">.rounded--l--10</div>" }}
+        <figure>
+<pre class="bg--dark pa--2">
   {{ $roundt }}
   {{ $roundr }}
   {{ $roundb }}
   {{ $roundl }}
-        </pre>
-      </figure>
-      <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
-        {{ $roundt | safeHTML }}<br>
-        {{ $roundr | safeHTML }}<br>
-        {{ $roundb | safeHTML }}<br>
-        {{ $roundl | safeHTML }}<br>
-      </figure>
+</pre>
+        </figure>
+        <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+          {{ $roundt | safeHTML }}<br>
+          {{ $roundr | safeHTML }}<br>
+          {{ $roundb | safeHTML }}<br>
+          {{ $roundl | safeHTML }}<br>
+          {{/*  <figcaption>preview</figcaption>  */}}
+        </figure>
+      </div>
     </section>
-  </div>
+  </article>
+{{ end }}
+
+{{ define "highlight" }}
+  <article id="highlight" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.7.0</span>
+      <h4 class="pb--1">Highlight</h4>
+    </header>
+    <figure class="class pa--1 border--5 rounded--t--6">
+      <kbd>.highlight--{info | success | warning | danger}</kbd>
+    </figure>
+    {{ $highinfo:= "GorangoCSS is require <span class=\"highlight--info\">no JS</span> to run! " }}
+    {{ $highsuccess:= "GorangoCSS is require <span class=\"highlight--success\">no JS</span> to run! " }}
+    {{ $highwarn:= "GorangoCSS is require <span class=\"highlight--warning\">no JS</span> to run! " }}
+    {{ $highdanger:= "GorangoCSS is require <span class=\"highlight--danger\">no JS</span> to run! " }}
+    <figure>
+<pre class="bg--dark pa--2">
+  {{ $highinfo }}
+  {{ $highsuccess }}
+  {{ $highwarn }}
+  {{ $highdanger }}
+</pre>
+    </figure>
+    <figure class="preview pa--2 border--5 rounded--b--6">
+      {{ $highinfo | safeHTML }}<br>
+      {{ $highsuccess | safeHTML }}<br>
+      {{ $highwarn | safeHTML }}<br>
+      {{ $highdanger | safeHTML }}<br>
+    </figure>
+  </article>
+{{ end }}
+
+{{ define "float" }}
+  <article id="float" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.7.0</span>
+      <h4 class="pb--1">Float</h4>
+    </header>
+    <figure class="class pa--1 border--5 rounded--t--6">
+      <kbd>.float--{left | right | none}</kbd>
+    </figure>
+    {{ $fleft := "<p class=\"float--left\">Float left!</p>" }}
+    {{ $fright := "<p class=\"float--right\">Float right!</p>" }}
+    {{ $fnone := "<p class=\"float--none\">No float properties.</p>" }}
+    <figure>
+<pre class="bg--dark pa--2">
+  {{ $fleft }}
+  {{ $fright }}
+  {{ $fnone }}
+</pre>
+    </figure>
+    <figure class="preview pa--2 border--5 rounded--b--6">
+      {{ $fleft | safeHTML }}<br>
+      {{ $fright | safeHTML }}<br>
+      {{ $fnone | safeHTML }}<br>
+    </figure>
+  </article>
 {{ end }}
 
 
