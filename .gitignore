@@ -1,4 +1,4 @@
 *.sh
 *.lib
 public/*
-assets/styles/gorango.css
+assets/styles/gorango.scss
