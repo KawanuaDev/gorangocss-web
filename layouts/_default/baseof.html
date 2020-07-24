@@ -8,20 +8,31 @@
   <header>
     <div class="container">
       <h1 class="py--2">{{ .Title }} Docs</h1>
-      <h2 class="pb--2">{{ .Param "description" }} <span class="highlight--info">No JS required!</span></h2>
+      <h2 class="pb--2 regular">{{ .Param "description" }} <span class="highlight--info">No JS required!</span></h2>
     </div>
   </header>
   <main>
     <div class="container">
 
-      <section id="components">
+      <section id="usage" class="mb--3">
+        <h3 class="py--1">How To Use</h3>
+        {{ block "howtouse" . }}{{ end }}
+      </section>
+
+      <section id="layout">
+        <h3 class="py--1">Layouts</h3>
+        {{ block "columns" . }}{{ end }}
+      </section>
+
+      <section id="components" class="mb--3">
         <h3 class="py--1">Components</h3>
         {{ block "badge" . }}{{ end }}
         {{ block "highlight" . }}{{ end }}
         {{ block "float" . }}{{ end }}
+        {{ block "card" . }}{{ end }}
       </section>
       
-      <section id="utilities">
+      <section id="utilities" class="mb--3">
         <h3 class="py--1">Utilities</h3>
         {{ block "margin" . }}{{ end }}
         {{ block "padding" . }}{{ end }}
