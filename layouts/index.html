@@ -53,7 +53,7 @@ npm i gorangocss
     {{ $col11 := "<div class=\"column--11 bg--gainsboro rounded--6 pa--1\"><kbd>.column--11</kbd></div>" }}
     {{ $col12 := "<div class=\"column--12 bg--gainsboro rounded--6 pa--1\"><kbd>.column--12</kbd></div>" }}
     <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $cola }}
   {{ $colb }}
 
@@ -71,7 +71,7 @@ npm i gorangocss
   {{ $col12 }}
 </pre>
     </figure>
-    <figure class="preview pa--2 border--5 rounded--b--6">
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
       {{ $cola | safeHTML }}<br>
       {{ $colb | safeHTML }}<br>
       <br>
@@ -87,7 +87,41 @@ npm i gorangocss
       {{ $col10 | safeHTML }}<br>
       {{ $col11 | safeHTML }}<br>
       {{ $col12 | safeHTML }}<br>
+    </div>
+  </article>
+{{ end }}
+
+{{ define "flexbox" }}
+  <article id="flexbox" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.8.0</span>
+      <h4 class="pb--1">Flex</h4>
+    </header>
+    <figure class="class pa--1 border--5 rounded--t--6">
+      <kbd>.flex</kbd>
+      <kbd>.flex--{wrap | nowrap | reverse}</kbd>
     </figure>
+    {{ $flex := "<div class=\"flex\"><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-1</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-2</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-3</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-4</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-5</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-6</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-7</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-8</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-9</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-10</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-11</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-12</div></div>" }}
+    {{ $flexwrap := "<div class=\"flex--wrap\"><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-1</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-2</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-3</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-4</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-5</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-6</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-7</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-8</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-9</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-10</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-11</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-12</div></div>" }}
+    {{ $flexnowrap := "<div class=\"flex--nowrap\"><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-1</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-2</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-3</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-4</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-5</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-6</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-7</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-8</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-9</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-10</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-11</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-12</div></div>" }}
+    {{ $flexreverse := "<div class=\"flex--reverse\"><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-1</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-2</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-3</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-4</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-5</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-6</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-7</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-8</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-9</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-10</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-11</div><div class=\"column--1 bg--gainsboro rounded--6 pa--1\">Column-12</div></div>" }}
+    <figure>
+<pre class="bg--dark pa--2" rel="html">
+  {{ $flex }}
+  {{ $flexwrap }}
+  {{ $flexnowrap }}
+  {{ $flexreverse }}
+</pre>
+    </figure>
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
+      {{ $flex | safeHTML }}<br>
+      <br>
+      {{ $flexwrap | safeHTML }}<br>
+      <br>
+      {{ $flexnowrap | safeHTML }}<br>
+      <br>
+      {{ $flexreverse | safeHTML }}
+    </div>
   </article>
 {{ end }}
 
@@ -118,7 +152,7 @@ npm i gorangocss
       {{ $p5 := "<p class=\"h5\">Header 5</p>" }}
       {{ $p6 := "<p class=\"h6\">Header 6</p>" }}
       <figure class="">
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $h1 }}
   {{ $h2 }}
   {{ $h3 }}
@@ -134,7 +168,7 @@ npm i gorangocss
   {{ $p6 }}
 </pre>
       </figure>
-      <figure class="preview pa--2 border--5 rounded--b--6">
+      <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
         {{ $h1 | safeHTML }}
         {{ $h2 | safeHTML }}
         {{ $h3 | safeHTML }}
@@ -148,7 +182,7 @@ npm i gorangocss
         {{ $p4 | safeHTML }}
         {{ $p5 | safeHTML }}
         {{ $p6 | safeHTML }}
-      </figure>
+      </div>
     </section>
 
     <section id="fontweight" class="pb--1">
@@ -163,14 +197,14 @@ npm i gorangocss
         {{ $hairline := "<span class=\"hairline\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fonthairline := "<span class=\"font--hairline\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f100 := "<span class=\"font--100\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $hairline }}
   {{ $fonthairline }}
   {{ $f100 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f100 | safeHTML }}
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -179,14 +213,14 @@ npm i gorangocss
         {{ $xlight := "<span class=\"xlight\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontxlight := "<span class=\"font--xlight\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f200 := "<span class=\"font--200\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $xlight }}
   {{ $fontxlight }}
   {{ $f200 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f200 | safeHTML }}
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -195,14 +229,14 @@ npm i gorangocss
         {{ $light := "<span class=\"light\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontlight := "<span class=\"font--light\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f300 := "<span class=\"font--300\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $light }}
   {{ $fontlight }}
   {{ $f300 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f300 | safeHTML }}
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -211,14 +245,14 @@ npm i gorangocss
         {{ $regular := "<span class=\"regular\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontregular := "<span class=\"font--regular\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f400 := "<span class=\"font--400\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $regular }}
   {{ $fontregular }}
   {{ $f400 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f400 | safeHTML }}
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -227,14 +261,14 @@ npm i gorangocss
         {{ $medium := "<span class=\"medium\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontmedium := "<span class=\"font--medium\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f500 := "<span class=\"font--500\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $medium }}
   {{ $fontmedium }}
   {{ $f500 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f500 | safeHTML }}
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -243,14 +277,14 @@ npm i gorangocss
         {{ $semibold := "<span class=\"semibold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontsemibold := "<span class=\"font--semibold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f600 := "<span class=\"font--600\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $semibold }}
   {{ $fontsemibold }}
   {{ $f600 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f600 | safeHTML }}
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -259,14 +293,14 @@ npm i gorangocss
         {{ $bold := "<span class=\"bold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontbold := "<span class=\"font--bold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f700 := "<span class=\"font--700\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $bold }}
   {{ $fontbold }}
   {{ $f700 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f700 | safeHTML }}
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -275,14 +309,14 @@ npm i gorangocss
         {{ $xbold := "<span class=\"xbold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontxbold := "<span class=\"font--xbold\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f800 := "<span class=\"font--800\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $xbold }}
   {{ $fontxbold }}
   {{ $f800 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f800 | safeHTML }}
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -291,14 +325,14 @@ npm i gorangocss
         {{ $heavy := "<span class=\"heavy\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $fontheavy := "<span class=\"font--heavy\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
         {{ $f900 := "<span class=\"font--900\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae!</span>" }}
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $heavy }}
   {{ $fontheavy }}
   {{ $f900 }}
 </pre>
-        <figure class="preview pa--2 border--5 rounded--b--6">
+        <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
           {{ $f900 | safeHTML }}
-        </figure>
+        </div>
       </div>
     </section>
 
@@ -314,17 +348,17 @@ npm i gorangocss
       {{ $txtorchid := "<p class=\"txt--orchid\">Text with Orchid color!</p>" }}
       {{ $txtaqua := "<p class=\"txt--aqua\">Text with Aqua color!</p>" }}
       <figure class="">
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $txtnavy }}
   {{ $txtorchid }}
   {{ $txtaqua }}
 </pre>
       </figure>
-      <figure class="preview pa--2 border--5 rounded--b--6">
+      <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
         {{ $txtnavy | safeHTML }}
         {{ $txtorchid | safeHTML }}
         {{ $txtaqua | safeHTML }}
-      </figure>
+      </div>
     </section>
 
     <section id="textalign" class="pb--1">
@@ -343,7 +377,7 @@ npm i gorangocss
       {{ $txtce := "<p class=\"txt--center\">Text with Center alignment!</p>" }}
       {{ $txtri := "<p class=\"txt--right\">Text with Right alignment!</p>" }}
       <figure class="">
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $txtl }}
   {{ $txtc }}
   {{ $txtr }}
@@ -353,7 +387,7 @@ npm i gorangocss
   {{ $txtri }}
 </pre>
       </figure>
-      <figure class="preview pa--2 border--5 rounded--b--6">
+      <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
         {{ $txtl | safeHTML }}
         {{ $txtc | safeHTML }}
         {{ $txtr | safeHTML }}
@@ -361,7 +395,7 @@ npm i gorangocss
         {{ $txtle | safeHTML }}
         {{ $txtce | safeHTML }}
         {{ $txtri | safeHTML }}
-      </figure>
+      </div>
     </section>
 
     <section id="texttransform" class="pb--1">
@@ -380,7 +414,7 @@ npm i gorangocss
       {{ $txtlow := "<p class=\"txt--lower\">Transformed to lowercase.</p>" }}
       {{ $txtcap := "<p class=\"txt--capital\">Transform first letter in each words to uppercase.</p>" }}
       <figure class="">
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $txtu }}
   {{ $txtl }}
   {{ $txtc }}
@@ -390,7 +424,7 @@ npm i gorangocss
   {{ $txtcap }}
 </pre>
       </figure>
-      <figure class="preview pa--2 border--5 rounded--b--6">
+      <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
         {{ $txtu | safeHTML }}
         {{ $txtl | safeHTML }}
         {{ $txtc | safeHTML }}
@@ -398,7 +432,7 @@ npm i gorangocss
         {{ $txtup | safeHTML }}
         {{ $txtlow | safeHTML }}
         {{ $txtcap | safeHTML }}
-      </figure>
+      </div>
     </section>
   </article>
 {{ end }}
@@ -417,17 +451,17 @@ npm i gorangocss
       {{ $bgcolor2 := "<div class=\"bg--orchid rounded--5 pa--2\">.bg--orchid</div>" }}
       {{ $bgcolor3 := "<div class=\"bg--aqua rounded--5 pa--2\">.bg--aqua</div>" }}
       <figure class="">
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $bgcolor1 }}
   {{ $bgcolor2 }}
   {{ $bgcolor3 }}
 </pre>
       </figure>
-      <figure class="preview flex pa--2 border--5 rounded--b--6">
+      <div class="preview flex pa--2 border--5 rounded--b--6" rel="preview">
         {{ $bgcolor1 | safeHTML }}<br>
         {{ $bgcolor2 | safeHTML }}<br>
         {{ $bgcolor3 | safeHTML }}<br>
-      </figure>
+      </div>
     </div>
     <div id="bgdarklight" class="pb--1">
       <figure class="class pa--1 border--5 rounded--t--6">
@@ -436,15 +470,15 @@ npm i gorangocss
       {{ $bgcolord := "<div class=\"bg--dark rounded--5 pa--2\">.bg--dark</div>" }}
       {{ $bgcolorl := "<div class=\"bg--light rounded--5 pa--2\">.bg--light</div>" }}
       <figure class="">
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $bgcolord }}
   {{ $bgcolorl }}
 </pre>
       </figure>
-      <figure class="preview flex pa--2 border--5 rounded--b--6">
+      <div class="preview flex pa--2 border--5 rounded--b--6" rel="preview">
         {{ $bgcolord | safeHTML }}<br>
         {{ $bgcolorl | safeHTML }}<br>
-      </figure>
+      </div>
     </div>
     <div id="bgothers" class="pb--1">
       <figure class="class pa--1 border--5 rounded--t--6">
@@ -455,19 +489,19 @@ npm i gorangocss
       {{ $bgwarning := "<div class=\"bg--warning rounded--5 pa--2\">.bg--warning</div>" }}
       {{ $bgdanger := "<div class=\"bg--danger rounded--5 pa--2\">.bg--danger</div>" }}
       <figure class="">
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $bginfo }}
   {{ $bgsuccess }}
   {{ $bgwarning }}
   {{ $bgdanger }}
 </pre>
       </figure>
-      <figure class="preview flex pa--2 border--5 rounded--b--6">
+      <div class="preview flex pa--2 border--5 rounded--b--6" rel="preview">
         {{ $bginfo | safeHTML }}<br>
         {{ $bgsuccess | safeHTML }}<br>
         {{ $bgwarning | safeHTML }}<br>
         {{ $bgdanger | safeHTML }}<br>
-      </figure>
+      </div>
     </div>
     <div id="bgblack" class="pb--1">
       <figure class="class pa--1 border--5 rounded--t--6">
@@ -480,7 +514,7 @@ npm i gorangocss
       {{ $bgblack40 := "<div class=\"bg--black--40 rounded--5 pa--2 txt--white\">.bg--black--40</div>" }}
       {{ $bgblack50 := "<div class=\"bg--black--50 rounded--5 pa--2 txt--white\">.bg--black--50</div>" }}
       <figure class="">
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $bgblack0 }}
   {{ $bgblack10 }}
   {{ $bgblack20 }}
@@ -489,14 +523,14 @@ npm i gorangocss
   {{ $bgblack50 }}
 </pre>
       </figure>
-      <figure class="preview flex pa--2 border--5 rounded--b--6">
+      <div class="preview flex pa--2 border--5 rounded--b--6" rel="preview">
         {{ $bgblack0 | safeHTML }}<br>
         {{ $bgblack10 | safeHTML }}<br>
         {{ $bgblack20 | safeHTML }}<br>
         {{ $bgblack30 | safeHTML }}<br>
         {{ $bgblack40 | safeHTML }}<br>
         {{ $bgblack50 | safeHTML }}<br>
-      </figure>
+      </div>
     </div>
   </article>
 {{ end }}
@@ -521,7 +555,7 @@ npm i gorangocss
     {{ $badge8 := "<span class=\"badge--warning\">New</span> Badge with Warning properties! " }}
     {{ $badge9 := "<span class=\"badge--danger\">New</span> Badge with Danger properties! " }}
     <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $badge1 }}
   {{ $badge2 }}
   {{ $badge3 }}
@@ -535,7 +569,7 @@ npm i gorangocss
   {{ $badge9 }}
 </pre>
     </figure>
-    <figure class="preview pa--2 border--5 rounded--b--6">
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
       {{ $badge1 | safeHTML }}<br>
       {{ $badge2 | safeHTML }}<br>
       {{ $badge3 | safeHTML }}<br>
@@ -547,7 +581,7 @@ npm i gorangocss
       {{ $badge7 | safeHTML }}<br>
       {{ $badge8 | safeHTML }}<br>
       {{ $badge9 | safeHTML }}<br>
-    </figure>
+    </div>
   </article>
 {{ end }}
 
@@ -569,7 +603,7 @@ npm i gorangocss
     {{ $shadowinner := "<div class=\"shadow--inner bg--whitesmoke rounded--6 pa--2\">.shadow--inner</div>" }}
     {{ $shadow0 := "<div class=\"shadow--0 bg--whitesmoke rounded--6 pa--2\">.shadow--0</div>" }}
     <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $shadowxs }}
   {{ $shadowsm }}
   {{ $shadow }}
@@ -580,7 +614,7 @@ npm i gorangocss
   {{ $shadow0 }}
 </pre>
     </figure>
-    <figure class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+    <div class="preview pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6" rel="preview">
       {{ $shadowxs | safeHTML }}<br>
       {{ $shadowsm | safeHTML }}<br>
       {{ $shadow | safeHTML }}<br>
@@ -589,7 +623,7 @@ npm i gorangocss
       {{ $shadowxl | safeHTML }}<br>
       {{ $shadowinner | safeHTML }}<br>
       {{ $shadow0 | safeHTML }}<br>
-    </figure>
+    </div>
   </article>
 {{ end }}
 
@@ -608,7 +642,7 @@ npm i gorangocss
     {{ $marginl4 := "<p class=\"margin--l--4 bg--gainsboro rounded--6 pa--1\">Paragraph section with <kbd>.ml--4</kbd> or <kbd>.margin--l--4</kbd> class.</p>" }}
     {{ $margin4 := "<p class=\"ma--4 bg--gainsboro rounded--6 pa--1\">Paragraph section with <kbd>.ma--4</kbd> or <kbd>.margin--4</kbd> class.</p>" }}
     <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $margint4 }}
   {{ $marginr4 }}
   {{ $marginb4 }}
@@ -616,13 +650,13 @@ npm i gorangocss
   {{ $margin4 }}
 </pre>
     </figure>
-    <figure class="preview pa--2 border--5 rounded--b--6">
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
       {{ $margint4 | safeHTML }}<br>
       {{ $marginr4 | safeHTML }}<br>
       {{ $marginb4 | safeHTML }}<br>
       {{ $marginl4 | safeHTML }}<br>
       {{ $margin4 | safeHTML }}<br>
-    </figure>
+    </div>
   </article>
 {{ end }}
 
@@ -641,7 +675,7 @@ npm i gorangocss
     {{ $paddingl4 := "<div class=\"pl--4 bg--plum rounded--6\"><p class=\"bg--gainsboro pa--1\">Paragraph section with <kbd>.pl--4</kbd> or <kbd>.padding--l--4</kbd> class.</p></div>" }}
     {{ $padding4 := "<div class=\"pa--4 bg--plum rounded--6\"><p class=\"bg--gainsboro pa--1\">Paragraph section with <kbd>.pa--4</kbd> or <kbd>.padding--4</kbd> class.</p></div>" }}
     <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $paddingt4 }}
   {{ $paddingr4 }}
   {{ $paddingb4 }}
@@ -649,13 +683,13 @@ npm i gorangocss
   {{ $padding4 }}
 </pre>
     </figure>
-    <figure class="preview pa--2 border--5 rounded--b--6">
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
       {{ $paddingt4 | safeHTML }}<br>
       {{ $paddingr4 | safeHTML }}<br>
       {{ $paddingb4 | safeHTML }}<br>
       {{ $paddingl4 | safeHTML }}<br>
       {{ $padding4 | safeHTML }}<br>
-    </figure>
+    </div>
   </article>
 {{ end }}
 
@@ -677,17 +711,17 @@ npm i gorangocss
         {{ $border5 := "<div class=\"border--5 bg--gainsboro rounded--6 pa--2\">.border--5</div>" }}
         {{ $border10 := "<div class=\"border--10 bg--gainsboro rounded--6 pa--2\">.border--10</div>" }}
         <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $border1 }}
   {{ $border5 }}
   {{ $border10 }}
 </pre>
         </figure>
-        <figure class="preview flex pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+        <div class="preview flex pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6" rel="preview">
           {{ $border1 | safeHTML }}<br>
           {{ $border5 | safeHTML }}<br>
           {{ $border10 | safeHTML }}<br>
-        </figure>
+        </div>
       </div>
       <div class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -698,19 +732,19 @@ npm i gorangocss
         {{ $borderb := "<div class=\"border--b--5 bg--gainsboro rounded--6 pa--2\">.border--b--5</div>" }}
         {{ $borderl := "<div class=\"border--l--5 bg--gainsboro rounded--6 pa--2\">.border--l--5</div>" }}
         <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $bordert }}
   {{ $borderr }}
   {{ $borderb }}
   {{ $borderl }}
 </pre>
         </figure>
-        <figure class="preview flex pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+        <div class="preview flex pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6" rel="preview">
           {{ $bordert | safeHTML }}<br>
           {{ $borderr | safeHTML }}<br>
           {{ $borderb | safeHTML }}<br>
           {{ $borderl | safeHTML }}<br>
-        </figure>
+        </div>
       </div>
     </section>
 
@@ -728,19 +762,19 @@ npm i gorangocss
         {{ $round10 := "<div class=\"rounded--10 bg--gainsboro pa--2\">.rounded--10</div>" }}
         {{ $roundfull := "<div class=\"rounded--full bg--gainsboro pa--2\">.rounded--full</div>" }}
         <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $round1 }}
   {{ $round5 }}
   {{ $round10 }}
   {{ $roundfull }}
 </pre>
         </figure>
-        <figure class="preview flex pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+        <div class="preview flex pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6" rel="preview">
           {{ $round1 | safeHTML }}<br>
           {{ $round5 | safeHTML }}<br>
           {{ $round10 | safeHTML }}<br>
           {{ $roundfull | safeHTML }}<br>
-        </figure>
+        </div>
       </div>
       <div id="roundtop" class="pb--1">
         <figure class="class pa--1 border--5 rounded--t--6">
@@ -751,20 +785,19 @@ npm i gorangocss
         {{ $roundb := "<div class=\"rounded--b--10 bg--gainsboro pa--2\">.rounded--b--10</div>" }}
         {{ $roundl := "<div class=\"rounded--l--10 bg--gainsboro pa--2\">.rounded--l--10</div>" }}
         <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $roundt }}
   {{ $roundr }}
   {{ $roundb }}
   {{ $roundl }}
 </pre>
         </figure>
-        <figure class="preview flex pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6">
+        <div class="preview flex pt--3 pr--3 pb--2 pl--2 border--5 rounded--b--6" rel="preview">
           {{ $roundt | safeHTML }}<br>
           {{ $roundr | safeHTML }}<br>
           {{ $roundb | safeHTML }}<br>
           {{ $roundl | safeHTML }}<br>
-          {{/*  <figcaption>preview</figcaption>  */}}
-        </figure>
+        </div>
       </div>
     </section>
   </article>
@@ -784,19 +817,19 @@ npm i gorangocss
     {{ $highwarn:= "GorangoCSS is require <span class=\"highlight--warning\">no JS</span> to run! " }}
     {{ $highdanger:= "GorangoCSS is require <span class=\"highlight--danger\">no JS</span> to run! " }}
     <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $highinfo }}
   {{ $highsuccess }}
   {{ $highwarn }}
   {{ $highdanger }}
 </pre>
     </figure>
-    <figure class="preview pa--2 border--5 rounded--b--6">
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
       {{ $highinfo | safeHTML }}<br>
       {{ $highsuccess | safeHTML }}<br>
       {{ $highwarn | safeHTML }}<br>
       {{ $highdanger | safeHTML }}<br>
-    </figure>
+    </div>
   </article>
 {{ end }}
 
@@ -813,17 +846,17 @@ npm i gorangocss
     {{ $fright := "<p class=\"float--right\">Float right!</p>" }}
     {{ $fnone := "<p class=\"float--none\">No float properties.</p>" }}
     <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $fleft }}
   {{ $fright }}
   {{ $fnone }}
 </pre>
     </figure>
-    <figure class="preview pa--2 border--5 rounded--b--6">
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
       {{ $fleft | safeHTML }}<br>
       {{ $fright | safeHTML }}<br>
       {{ $fnone | safeHTML }}<br>
-    </figure>
+    </div>
   </article>
 {{ end }}
 
@@ -838,13 +871,13 @@ npm i gorangocss
     </figure>
     {{ $cardl := "<div class=\"card shadow--md bg--light pa--1 rounded--5 column--3\"><header class=\"card__header\"><h4>Card Title</h4></header><div class=\"card__content\">This is a card example.</div></div>" }}
     <figure>
-<pre class="bg--dark pa--2">
+<pre class="bg--dark pa--2" rel="html">
   {{ $cardl }}
 </pre>
     </figure>
-    <figure class="preview pa--2 border--5 rounded--b--6">
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
       {{ $cardl | safeHTML }}<br>
-    </figure>
+    </div>
   </article>
 {{ end }}
 

@@ -5,27 +5,29 @@
   {{ partial "scripts.html" . }}
 </head>
 <body>
-  <header>
-    <div class="container">
+  <header class="bg--dark">
+    <div class="container py--3 mb--3">
       <h1 class="py--2">{{ .Title }} Docs</h1>
-      <h2 class="pb--2 regular">{{ .Param "description" }} <span class="highlight--info">No JS required!</span></h2>
+      <h2 class="pb--2 regular">{{ .Param "description" }} <span class="highlight--warning">No JS required!</span></h2>
+      <p><a href="https://github.com/KawanuaDev/gorangocss/releases/latest" target="_blank" rel="noopener noreferrer"><i class="typcn typcn-download"></i> Download</a></p>
     </div>
   </header>
   <main>
     <div class="container">
 
       <section id="usage" class="mb--3">
-        <h3 class="py--1">How To Use</h3>
+        <h3 class="py--1"><span class="highlight--danger">How To Use</span></h3>
         {{ block "howtouse" . }}{{ end }}
       </section>
 
       <section id="layout">
-        <h3 class="py--1">Layouts</h3>
+        <h3 class="py--1"><span class="highlight--danger">Layouts</span></h3>
         {{ block "columns" . }}{{ end }}
+        {{ block "flexbox" . }}{{ end }}
       </section>
 
       <section id="components" class="mb--3">
-        <h3 class="py--1">Components</h3>
+        <h3 class="py--1"><span class="highlight--danger">Components</span></h3>
         {{ block "badge" . }}{{ end }}
         {{ block "highlight" . }}{{ end }}
         {{ block "float" . }}{{ end }}
@@ -33,7 +35,7 @@
       </section>
       
       <section id="utilities" class="mb--3">
-        <h3 class="py--1">Utilities</h3>
+        <h3 class="py--1"><span class="highlight--danger">Utilities</span></h3>
         {{ block "margin" . }}{{ end }}
         {{ block "padding" . }}{{ end }}
         {{ block "bgcolor" . }}{{ end }}
@@ -44,6 +46,13 @@
     
     </div>
   </main>
+  <footer class="bg--dark">
+    <div class="container">
+      <div class="columns py--5">
+        <a href="https://kawanua.id" target="_blank" rel="noopener noreferrer">2020 Kawanua ID.</a>
+      </div>
+    </div>
+  </footer>
   {{ partial "scripts.html" . }}
 </body>
 </html>
