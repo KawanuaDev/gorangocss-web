@@ -5,11 +5,13 @@
   {{ partial "scripts.html" . }}
 </head>
 <body>
-  <header class="bg--dark">
-    <div class="container py--3 mb--3">
-      <h1 class="py--2">{{ .Title }} Docs</h1>
-      <h2 class="pb--2 regular">{{ .Param "description" }} <span class="highlight--warning">No JS required!</span></h2>
-      <p><a href="https://github.com/KawanuaDev/gorangocss/releases/latest" target="_blank" rel="noopener noreferrer"><i class="typcn typcn-download"></i> Download</a></p>
+  <header class="hero bg--dark gradient mb--3">
+    <div class="hero__content">
+      <div class="container pb--2">
+        <h1 class="py--2">{{ .Title }} Docs</h1>
+        <h2 class="pb--2">{{ .Param "description" }} <span class="highlight--warning">No JS required!</span></h2>
+        <p><a class="rounded--full bg--info pa--1" href="https://github.com/KawanuaDev/gorangocss/releases/latest" target="_blank" rel="noopener noreferrer"><i class="typcn typcn-download"></i> Download</a></p>
+      </div>
     </div>
   </header>
   <main>
@@ -24,6 +26,7 @@
         <h3 class="py--1"><span class="highlight--danger">Layouts</span></h3>
         {{ block "columns" . }}{{ end }}
         {{ block "flexbox" . }}{{ end }}
+        {{ block "heros" . }}{{ end }}
       </section>
 
       <section id="components" class="mb--3">
@@ -32,6 +35,8 @@
         {{ block "highlight" . }}{{ end }}
         {{ block "float" . }}{{ end }}
         {{ block "card" . }}{{ end }}
+        {{ block "buttons" . }}{{ end }}
+        {{ block "notification" . }}{{ end }}
       </section>
       
       <section id="utilities" class="mb--3">
@@ -49,10 +54,13 @@
   <footer class="bg--dark">
     <div class="container">
       <div class="columns py--5">
-        <a href="https://kawanua.id" target="_blank" rel="noopener noreferrer">2020 Kawanua ID.</a>
+        <p>
+          Released under the MIT License.<br>
+          © 2020 <a href="https://kawanua.id" target="_blank" rel="noopener noreferrer">Kawanua ID.</a>
+        </p>
       </div>
     </div>
   </footer>
-  {{ partial "scripts.html" . }}
+  <!-- {{ partial "scripts.html" . }} -->
 </body>
 </html>

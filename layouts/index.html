@@ -108,8 +108,11 @@ npm i gorangocss
     <figure>
 <pre class="bg--dark pa--2" rel="html">
   {{ $flex }}
+
   {{ $flexwrap }}
+
   {{ $flexnowrap }}
+
   {{ $flexreverse }}
 </pre>
     </figure>
@@ -137,7 +140,6 @@ npm i gorangocss
       </header>
       <figure class="class pa--1 border--5 rounded--t--6">
         <kbd>h1 - h6</kbd>
-        <kbd>.h{1 | 2 | 3 | 4 | 5 | 6}</kbd>
       </figure>
       {{ $h1 := "<h1>Header 1</h1>" }}
       {{ $h2 := "<h2>Header 2</h2>" }}
@@ -167,7 +169,7 @@ npm i gorangocss
 
     <section id="fontsize" class="pb--1">
       <header>
-        <span class="fontsize bg--light float--right">since 1.8.0</span>
+        <span class="badge bg--light float--right">since 1.8.0</span>
         <h5 class="pb--1">Font Size</h5>
       </header>
       <figure class="class pa--1 border--5 rounded--t--6">
@@ -482,15 +484,18 @@ npm i gorangocss
         <kbd>.bg--{dark | light}</kbd>
       </figure>
       {{ $bgcolord := "<div class=\"bg--dark rounded--5 pa--2\">.bg--dark</div>" }}
+      {{ $bgcolordg := "<div class=\"bg--dark--gradient rounded--5 pa--2\">.bg--dark--gradient</div>" }}
       {{ $bgcolorl := "<div class=\"bg--light rounded--5 pa--2\">.bg--light</div>" }}
       <figure class="">
 <pre class="bg--dark pa--2" rel="html">
   {{ $bgcolord }}
+  {{ $bgcolordg }}
   {{ $bgcolorl }}
 </pre>
       </figure>
-      <div class="preview flex pa--2 border--5 rounded--b--6" rel="preview">
+      <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
         {{ $bgcolord | safeHTML }}<br>
+        {{ $bgcolordg | safeHTML }}<br>
         {{ $bgcolorl | safeHTML }}<br>
       </div>
     </div>
@@ -499,22 +504,34 @@ npm i gorangocss
         <kbd>.bg--{info | success | warning | danger}</kbd>
       </figure>
       {{ $bginfo := "<div class=\"bg--info rounded--5 pa--2\">.bg--info</div>" }}
+      {{ $bginfog := "<div class=\"bg--info--gradient rounded--5 pa--2\">.bg--info--gradient</div>" }}
       {{ $bgsuccess := "<div class=\"bg--success rounded--5 pa--2\">.bg--success</div>" }}
+      {{ $bgsuccessg := "<div class=\"bg--success--gradient rounded--5 pa--2\">.bg--success--gradient</div>" }}
       {{ $bgwarning := "<div class=\"bg--warning rounded--5 pa--2\">.bg--warning</div>" }}
+      {{ $bgwarningg := "<div class=\"bg--warning--gradient rounded--5 pa--2\">.bg--warning--gradient</div>" }}
       {{ $bgdanger := "<div class=\"bg--danger rounded--5 pa--2\">.bg--danger</div>" }}
+      {{ $bgdangerg := "<div class=\"bg--danger--gradient rounded--5 pa--2\">.bg--danger--gradient</div>" }}
       <figure class="">
 <pre class="bg--dark pa--2" rel="html">
   {{ $bginfo }}
+  {{ $bginfog }}
   {{ $bgsuccess }}
+  {{ $bgsuccessg }}
   {{ $bgwarning }}
+  {{ $bgwarningg }}
   {{ $bgdanger }}
+  {{ $bgdangerg }}
 </pre>
       </figure>
-      <div class="preview flex pa--2 border--5 rounded--b--6" rel="preview">
+      <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
         {{ $bginfo | safeHTML }}<br>
+        {{ $bginfog | safeHTML }}<br>
         {{ $bgsuccess | safeHTML }}<br>
+        {{ $bgsuccessg | safeHTML }}<br>
         {{ $bgwarning | safeHTML }}<br>
+        {{ $bgwarningg | safeHTML }}<br>
         {{ $bgdanger | safeHTML }}<br>
+        {{ $bgdangerg | safeHTML }}<br>
       </div>
     </div>
     <div id="bgblack" class="pb--1">
@@ -891,6 +908,140 @@ npm i gorangocss
     </figure>
     <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
       {{ $cardl | safeHTML }}<br>
+    </div>
+  </article>
+{{ end }}
+
+
+{{ define "buttons" }}
+  <article id="buttons" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.9.0</span>
+      <h4 class="pb--1">Buttons</h4>
+    </header>
+    <figure class="class pa--1 border--5 rounded--t--6">
+      <kbd>.button--{xs | sm | md | lg}</kbd>
+    </figure>
+    {{ $bdarkxs := "<button class=\"button--xs bg--dark\">.button--xs</button>" }}
+    {{ $bdarksm := "<button class=\"button--sm bg--dark\">.button--sm</button>" }}
+    {{ $bdarkmd := "<button class=\"button--md bg--dark\">.button--md</button>" }}
+    {{ $bdarklg := "<input type=\"submit\" class=\"button--lg bg--dark\" value=\".button--lg\">"}}
+    {{ $binfoxs := "<button class=\"button--xs bg--info\">.button--xs</button>" }}
+    {{ $binfosm := "<button class=\"button--sm bg--info\">.button--sm</button>" }}
+    {{ $binfomd := "<button class=\"button--md bg--info\">.button--md</button>" }}
+    {{ $binfolg := "<input type=\"submit\" class=\"button--lg bg--info\" value=\".button--lg\">"}}
+    {{ $bsuccxs := "<button class=\"button--xs bg--success\">.button--xs</button>" }}
+    {{ $bsuccsm := "<button class=\"button--sm bg--success\">.button--sm</button>" }}
+    {{ $bsuccmd := "<button class=\"button--md bg--success\">.button--md</button>" }}
+    {{ $bsucclg := "<input type=\"submit\" class=\"button--lg bg--success\" value=\".button--lg\">"}}
+    {{ $bwarnxs := "<button class=\"button--xs bg--warning\">.button--xs</button>" }}
+    {{ $bwarnsm := "<button class=\"button--sm bg--warning\">.button--sm</button>" }}
+    {{ $bwarnmd := "<button class=\"button--md bg--warning\">.button--md</button>" }}
+    {{ $bwarnlg := "<input type=\"submit\" class=\"button--lg bg--warning\" value=\".button--lg\">"}}
+    {{ $bdangxs := "<button class=\"button--xs bg--danger\">.button--xs</button>" }}
+    {{ $bdangsm := "<button class=\"button--sm bg--danger\">.button--sm</button>" }}
+    {{ $bdangmd := "<button class=\"button--md bg--danger\">.button--md</button>" }}
+    {{ $bdanglg := "<input type=\"submit\" class=\"button--lg bg--danger\" value=\".button--lg\">"}}
+    <figure>
+<pre class="bg--dark pa--2" rel="html">
+  {{ $bdarkxs }}
+  {{ $bdarksm }}
+  {{ $bdarkmd }}
+  {{ $bdarklg }}
+  {{ $binfoxs }}
+  {{ $binfosm }}
+  {{ $binfomd }}
+  {{ $binfolg }}
+  {{ $bsuccxs }}
+  {{ $bsuccsm }}
+  {{ $bsuccmd }}
+  {{ $bsucclg }}
+  {{ $bwarnxs }}
+  {{ $bwarnsm }}
+  {{ $bwarnmd }}
+  {{ $bwarnlg }}
+  {{ $bdangxs }}
+  {{ $bdangsm }}
+  {{ $bdangmd }}
+  {{ $bdanglg }}
+</pre>
+    </figure>
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
+      {{ $bdarkxs | safeHTML }}
+      {{ $bdarksm | safeHTML }}
+      {{ $bdarkmd | safeHTML }}
+      {{ $bdarklg | safeHTML }}
+      <br>
+      {{ $binfoxs | safeHTML }}
+      {{ $binfosm | safeHTML }}
+      {{ $binfomd | safeHTML }}
+      {{ $binfolg | safeHTML }}
+      <br>
+      {{ $bsuccxs | safeHTML }}
+      {{ $bsuccsm | safeHTML }}
+      {{ $bsuccmd | safeHTML }}
+      {{ $bsucclg | safeHTML }}
+      <br>
+      {{ $bwarnxs | safeHTML }}
+      {{ $bwarnsm | safeHTML }}
+      {{ $bwarnmd | safeHTML }}
+      {{ $bwarnlg | safeHTML }}
+      <br>
+      {{ $bdangxs | safeHTML }}
+      {{ $bdangsm | safeHTML }}
+      {{ $bdangmd | safeHTML }}
+      {{ $bdanglg | safeHTML }}
+    </div>
+  </article>
+{{ end }}
+
+{{ define "notification" }}
+  <article id="notification" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.9.0</span>
+      <h4 class="pb--1">Notice</h4>
+    </header>
+    <figure class="class pa--1 border--5 rounded--t--6">
+      <kbd>.notice--{info | success | warning | danger}</kbd>
+    </figure>
+    {{ $hinti := "<div class=\"notice--info txt--white\"><button class=\"close\"> </button>.notice--info</div>" }}
+    {{ $hints := "<div class=\"notice--success txt--white\"><button class=\"close\"> </button>.notice--success</div>" }}
+    {{ $hintw := "<div class=\"notice--warning txt--white\"><button class=\"close\"> </button>.notice--warning</div>"}}
+    {{ $hintd := "<div class=\"notice--danger txt--white\"><button class=\"close\"> </button>.notice--danger</div>" }}
+    <figure>
+<pre class="bg--dark pa--2" rel="html">
+  {{ $hinti }}
+  {{ $hints }}
+  {{ $hintw }}
+  {{ $hintd }}
+</pre>
+    </figure>
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
+      {{ $hinti | safeHTML }}
+      {{ $hints | safeHTML }}
+      {{ $hintw | safeHTML }}
+      {{ $hintd | safeHTML }}
+    </div>
+  </article>
+{{ end }}
+
+{{ define "heros" }}
+  <article id="heros" class="pb--1">
+    <header>
+      <span class="badge bg--light float--right">since 1.9.0</span>
+      <h4 class="pb--1">Hero</h4>
+    </header>
+    <figure class="class pa--1 border--5 rounded--t--6">
+      <kbd>.hero</kbd>
+    </figure>
+    {{ $hero1 := "<div class=\"hero bg--info\"><div class=\"hero__content\"><div class=\"container\"><p class=\"hero__title\">Title</p><p class=\"hero__subtitle\">Sub Title</p></div></div>" }}
+    <figure>
+<pre class="bg--dark pa--2" rel="html">
+  {{ $hero1 }}
+</pre>
+    </figure>
+    <div class="preview pa--2 border--5 rounded--b--6" rel="preview">
+      {{ $hero1 | safeHTML }}
     </div>
   </article>
 {{ end }}

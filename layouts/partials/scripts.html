@@ -1,0 +1,5 @@
+{{ $prism := resources.Get "scripts/prism.js" }}
+{{ $defaultJS := slice $prism | resources.Concat "scripts/global.js" }}
+{{ $script := $defaultJS }}
+{{ $globalJS := $script | resources.Minify | resources.Fingerprint }}
+<script src="{{ $globalJS.Permalink }}" integrity="{{ $globalJS.Data.Integrity }}"></script>
