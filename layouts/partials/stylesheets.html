@@ -1,10 +1,10 @@
 {{ $main := resources.Get "styles/main.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $main.Permalink }}">
 {{ if .Site.IsServer }}
-  {{ $prism := resources.Get "styles/prism.scss" | toCSS | minify | fingerprint }}
-  {{ $gorango := resources.Get "styles/gorango.scss" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $prism.Permalink }}">
-  <link rel="stylesheet" href="{{ $gorango.Permalink }}">
+{{ $gorango := resources.Get "styles/gorango.scss" | toCSS | minify | fingerprint }}
+{{ $custombtn := resources.Get "styles/custombtn.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $gorango.Permalink }}">
+<link rel="stylesheet" href="{{ $custombtn.Permalink }}">
 {{ else }}
   <link rel="stylesheet" href="https://unpkg.com/gorangocss@latest/dist/gorango.min.css" crossorigin="anonymous">
 {{ end }}

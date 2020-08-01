@@ -5,12 +5,17 @@
   {{ partial "scripts.html" . }}
 </head>
 <body>
-  <header class="hero bg--dark gradient mb--3">
-    <div class="hero__content">
-      <div class="container pb--2">
-        <h1 class="py--2">{{ .Title }} Docs</h1>
-        <h2 class="pb--2">{{ .Param "description" }} <span class="highlight--warning">No JS required!</span></h2>
-        <p><a class="rounded--full bg--info pa--1" href="https://github.com/KawanuaDev/gorangocss/releases/latest" target="_blank" rel="noopener noreferrer"><i class="typcn typcn-download"></i> Download</a></p>
+
+  {{ partial "navbar.html" . }}
+  
+  <header class="mb--3">
+    <div class="hero bg--dark--gradient">
+      <div class="hero__content">
+        <div class="container pb--3">
+          <h1 class="py--2">{{ .Title }} Docs</h1>
+          <h2 class="mb--2">{{ .Param "description" }} <span class="highlight--warning">No JS required!</span></h2>
+          <p><a class="rounded--full bg--info pa--1" href="https://github.com/KawanuaDev/gorangocss/releases/latest" target="_blank" rel="noopener noreferrer"><i class="typcn typcn-download"></i> Download</a></p>
+        </div>
       </div>
     </div>
   </header>
@@ -18,7 +23,7 @@
     <div class="container">
 
       <section id="usage" class="mb--3">
-        <h3 class="py--1"><span class="highlight--danger">How To Use</span></h3>
+        <h3 class="py--1"><a id="howtouse"></a><span class="highlight--danger">How To Use</span></h3>
         {{ block "howtouse" . }}{{ end }}
       </section>
 
@@ -36,7 +41,13 @@
         {{ block "float" . }}{{ end }}
         {{ block "card" . }}{{ end }}
         {{ block "buttons" . }}{{ end }}
+        {{ if .Site.IsServer }}
+          {{ block "custombtn" . }}{{ end }}
+        {{ else }}
+        {{ end }}
         {{ block "notification" . }}{{ end }}
+        {{ block "dropdowns" . }}{{ end }}
+        {{ block "navbars" . }}{{ end }}
       </section>
       
       <section id="utilities" class="mb--3">
@@ -54,10 +65,19 @@
   <footer class="bg--dark">
     <div class="container">
       <div class="columns py--5">
-        <p>
-          Released under the MIT License.<br>
-          © 2020 <a href="https://kawanua.id" target="_blank" rel="noopener noreferrer">Kawanua ID.</a>
-        </p>
+        <div class="column">          
+          <p>
+            Released under the MIT License.<br>
+            © 2020 <a href="https://kawanua.id" target="_blank" rel="noopener noreferrer">Kawanua ID.</a>
+          </p>
+        </div>
+        <div class="column--2">
+          <dl>
+            <dt class="font--bold">Sponsored by:</dt>
+            <dd><a href="https://gitbook.com" target="_blank" rel="noopener noreferrer">GitBook</a></dd>
+            <dd><a href="https://www.browserstack.com" target="_blank" rel="noopener noreferrer">BrowserStack</a></dd>
+          </dl>
+        </div>
       </div>
     </div>
   </footer>
