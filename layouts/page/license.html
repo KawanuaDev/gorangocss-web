@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "headtag.html" . }}
+  {{ partial "scripts.html" . }}
+</head>
+<body>
+
+  {{ partial "navbar.html" . }}
+  
+  <header class="mb--3">
+    {{ partial "header.html" . }}
+  </header>
+  <main>
+    <div class="container my--5">
+      {{ .Content | markdownify }}
+    </div>
+  </main>
+  <footer class="bg--dark">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>
