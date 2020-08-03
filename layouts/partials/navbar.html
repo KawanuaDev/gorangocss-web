@@ -1,15 +1,15 @@
-<nav class="navbar">
-  <div class="navbar__container">
-    <input type="checkbox" id="nav" class="hidden">
-    <label class="column navbar__burger" for="nav">
+<nav class="navbart">
+  <div class="navbart__container">
+    <input type="checkbox" id="navt" class="hidden">
+    <label class="column navbart__burger" for="navt">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </label>
-    <div class="navbar__logo">
+    <div class="navbart__logo">
         <a href="/">{{ .Site.Title }}</a>
     </div>
-    <div class="column navbar__wrapper">
+    <div class="navbart__wrapper">
       <ul>
         <li><a href="#howtouse">Howto Use</a></li>
         <li class="dropdown">
@@ -55,6 +55,13 @@
               <a class="dropdown__item" href="#shadows">Shadow</a>
             </div>
           </div>
+        </li>
+      </ul>
+    </div>
+    <div class="navbart__cta">
+      <ul>
+        <li>
+          <a href="https://github.com/KawanuaDev/gorangocss/releases/latest" target="_blank" rel="noopener noreferrer">📦 Download</a>
         </li>
         <li>
           <a href="https://github.com/KawanuaDev/gorangocss/issues/new?assignees=erolj%2C+kawanuaid&labels=bug&template=bug.md&title=%5BBUG%5D+" target="_blank" rel="noopener noreferrer">⚠️ Report Bug</a>
