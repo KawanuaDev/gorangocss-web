@@ -1,6 +1,6 @@
 baseURL = ""
 languageCode = "en-us"
-title = "GorangoCSS"
+title = "🦈GorangoCSS"
 assetsDir = "assets"
 publishDir = "public"
 
