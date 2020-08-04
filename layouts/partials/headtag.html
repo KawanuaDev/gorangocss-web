@@ -1,4 +1,21 @@
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="{{ .Param "authorUrl" }}">
+  <meta property="og:type" content="{{ .Param "meta_type" }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{if .IsHome}}{{ .Site.Title }}{{ else }}{{ .Page.Title }} - {{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Page.Description}}{{end}}">
+  <meta property="og:image" content="{{ .Param "meta_image" }}">
+  <meta property="og:image:width" content="64">
+  <meta property="og:image:height" content="64">
+  <meta property="og:url" content="{{ .Param "authorUrl" }}">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="{{if .IsHome}}{{ .Site.Title }}{{ else }}{{ .Page.Title }} - {{ .Site.Title }}{{ end }}">
+  <meta property="twitter:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Page.Description}}{{end}}">
+  <meta property="twitter:image" content="{{ .Param "twitter_image" }}">
+  <meta property="twitter:site" content="{{ .Param "twitter_handle" }}">
+  <meta name="description" content="{{ .Param "description" }}">
+
   <title>{{ .Title }} - {{ .Param "description" }}</title>
   {{ partial "stylesheets.html" . }}
+  

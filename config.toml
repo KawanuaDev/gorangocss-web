@@ -6,3 +6,11 @@ publishDir = "public"
 
 [params]
 description = "A CSS framework for building custom user interfaces."
+copydate = "2020"
+authorUrl = "https://gorangocss.kawanua.id"
+authorName = "Kawanua ID"
+twitter_handle = "kawanuaco"
+twitter_image = "https://cdn.images.my.id/images/2020/08/03/76b71cf0a98372a7103e6609212b3243.jpg"
+meta_image = "https://cdn.images.my.id/images/2020/08/03/d9a1c60b37120ff913b5377f75f99bd2.jpg"
+meta_type = "page"
+
