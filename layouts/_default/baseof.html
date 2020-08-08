@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {{ if .Site.IsServer }}
+  {{ else }}
   {{ partial "headtag.html" . }}
-  {{ partial "scripts.html" . }}
+  {{ partial "analytics.html" . }}
+  {{ end }}
 </head>
 <body>
 

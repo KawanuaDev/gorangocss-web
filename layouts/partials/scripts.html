@@ -5,7 +5,3 @@
 {{ $script := $defaultJS }}
 {{ $globalJS := $script | resources.Minify | resources.Fingerprint }}
 <script src="{{ $globalJS.Permalink }}" integrity="{{ $globalJS.Data.Integrity }}"></script> -->
-{{ if .Site.IsServer }}
-{{ else }}
-{{ partial "analytics.html" . }}
-{{ end }}
