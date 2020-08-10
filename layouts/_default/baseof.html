@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {{ partial "headtag.html" . }}
   {{ if .Site.IsServer }}
   {{ else }}
-  {{ partial "headtag.html" . }}
   {{ partial "analytics.html" . }}
   {{ end }}
 </head>

@@ -7,7 +7,13 @@
       <span aria-hidden="true"></span>
     </label>
     <div class="navbar__logo">
-        <a href="/">{{ .Site.Title }}</a>
+      <a href="/">{{ .Site.Title }}</a> 
+      {{ if .Site.IsServer }}
+        <span class="badge bg--dark">v1.0.0</span>
+      {{ else }}
+        {{ $versi := getJSON "https://api.github.com/repos/KawanuaDev/gorangocss/releases/latest" }}
+        <span class="badge bg--dark">{{ $versi.tag_name }}</span>
+      {{ end }}
     </div>
     <div class="navbar__wrapper">
       <ul>
@@ -60,9 +66,17 @@
     </div>
     <div class="navbar__cta">
       <ul>
-        <li>
-          <a href="https://github.com/KawanuaDev/gorangocss/releases/latest" target="_blank" rel="noopener noreferrer">📦 Download</a>
-        </li>
+        {{ if .IsHome }}
+        {{ else }}
+          <li>
+            {{ if .Site.IsServer }}
+              <a href="#" target="_blank" rel="noopener noreferrer">📦 Download</a>
+            {{ else }}
+              {{ $unduh := getJSON "https://api.github.com/repos/KawanuaDev/gorangocss/releases/latest" }}
+              <a href="{{ $unduh.zipball_url }}" target="_blank" rel="noopener noreferrer">📦 Download</a>
+            {{ end }}
+          </li>
+        {{ end }}
         <li>
           <a href="https://github.com/KawanuaDev/gorangocss/issues/new?assignees=erolj%2C+kawanuaid&labels=bug&template=bug.md&title=%5BBUG%5D+" target="_blank" rel="noopener noreferrer">⚠️ Report Bug</a>
         </li>
