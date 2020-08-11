@@ -33,6 +33,15 @@ kbd {
   justify-content: space-evenly;
 }
 
+.download {
+  &:link, &:visited {
+    color: white;
+  }
+  &:hover {
+    background-color: olivedrab;
+    color: white;
+  }
+}
 .report {
   &:link, &:visited {
     color: white;
