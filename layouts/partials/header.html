@@ -11,8 +11,8 @@
         {{ else }}
           <div class="mb--3">
             {{ $latestver := getJSON "https://api.github.com/repos/KawanuaDev/gorangocss/releases/latest" }}
-            <a class="button rounded--6 bg--crimson txt--white mr--1" href="{{ $latestver.zipball_url }}" target="_blank" rel="noopener noreferrer"><span>📦 Download {{ $latestver.tag_name }}</span></a>
-            <a class="button rounded--6 bg--light" href="https://docs.gorangocss.kawanua.id" target="_blank" rel="noopener noreferrer"><span>📚 Documentation</span></a>
+            <a class="button bg--danger rounded--6 mr--1" href="{{ $latestver.zipball_url }}" target="_blank" rel="noopener noreferrer"><span>📦 Download {{ $latestver.tag_name }}</span></a>
+            <a class="button -outline-light rounded--6" href="https://docs.gorangocss.kawanua.id" target="_blank" rel="noopener noreferrer"><span>📚 Documentation</span></a>
           </div>
         {{ end }}
       {{ else }}
